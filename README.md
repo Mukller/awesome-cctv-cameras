@@ -1,49 +1,55 @@
+<div align="center">
+
+[English](README_EN.md) • **Русский**
+
+</div>
+
 # awesome-cctv-cameras
 
-> Curated open database of 2,100+ CCTV / IP camera specs — machine-readable, CC0, no paywalls.
+> Открытая база данных 2100+ IP-камер и камер видеонаблюдения — машиночитаемый формат, CC0, без пейволлов.
 
-[![cameras](https://img.shields.io/badge/cameras-2101-blue?style=flat-square)](data/cameras.json)
-[![brands](https://img.shields.io/badge/brands-71-green?style=flat-square)](cameras/)
-[![license](https://img.shields.io/badge/license-CC0-lightgrey?style=flat-square)](LICENSE)
-[![schema](https://img.shields.io/badge/schema-validated-brightgreen?style=flat-square)](schema/camera.schema.json)
+[![cameras](https://img.shields.io/badge/камер-2101-blue?style=flat-square)](data/cameras.json)
+[![brands](https://img.shields.io/badge/брендов-71-green?style=flat-square)](cameras/)
+[![license](https://img.shields.io/badge/лицензия-CC0-lightgrey?style=flat-square)](LICENSE)
+[![schema](https://img.shields.io/badge/схема-validated-brightgreen?style=flat-square)](schema/camera.schema.json)
 
-Camera spec sheets are buried in vendor PDFs, paywalled databases (IPVM etc.), and inconsistent retailer pages. This repo normalises them into validated JSON — one file per camera, one big queryable array, one CSV for spreadsheets.
-
----
-
-## Contents
-
-- [Stats](#stats)
-- [Browse](#browse)
-- [Quick start](#quick-start)
-- [Query examples](#query-examples)
-- [Schema](#schema)
-- [Brands](#brands)
-- [Contributing](#contributing)
-- [License](#license)
+Спецификации камер разбросаны по PDF-каталогам производителей, пейволлным базам (IPVM и др.) и страницам ретейлеров в несовместимых форматах. Этот репозиторий сводит их в валидированный JSON — один файл на камеру, один общий массив для запросов, CSV для таблиц.
 
 ---
 
-## Stats
+## Содержание
+
+- [Статистика](#статистика)
+- [Просмотр онлайн](#просмотр-онлайн)
+- [Быстрый старт](#быстрый-старт)
+- [Примеры запросов](#примеры-запросов)
+- [Схема данных](#схема-данных)
+- [Бренды](#бренды)
+- [Участие в проекте](#участие-в-проекте)
+- [Лицензия](#лицензия)
+
+---
+
+## Статистика
 
 | | |
 |---|---|
-| Cameras | **2,101** |
-| Brands | **71** |
-| Form factors | 11 |
-| PoE wired | 1,279 |
+| Камеры | **2 101** |
+| Бренды | **71** |
+| Форм-факторы | 11 |
+| PoE (проводные) | 1 279 |
 | WiFi | 503 |
-| Battery / wire-free | 180 |
+| Аккумуляторные / беспроводные | 180 |
 | 4K / 8MP+ | 545 |
-| With Frigate / HA configs | 1,507 |
+| С конфигами Frigate / HA | 1 507 |
 
 ---
 
-## Browse
+## Просмотр онлайн
 
-Live viewer → **[cctv-database.com](https://cctv-database.com)**
+Веб-интерфейс → **[cctv-database.com](https://cctv-database.com)**
 
-Offline: serve `docs/` with any static server and open `demo.html` (no build step needed).
+Локально: запустить `docs/` через любой статический сервер и открыть `demo.html` (сборка не нужна).
 
 ```bash
 cd docs && python3 -m http.server
@@ -51,70 +57,70 @@ cd docs && python3 -m http.server
 
 ---
 
-## Quick start
+## Быстрый старт
 
 ```bash
 git clone https://github.com/Mukller/awesome-cctv-cameras.git
 cd awesome-cctv-cameras
-npm install   # installs Ajv for schema validation only
-npm run build # validates all JSON → writes data/cameras.json + data/cameras.csv
+npm install   # только Ajv для валидации схемы
+npm run build # валидирует JSON → пишет data/cameras.json + data/cameras.csv
 ```
 
-### Repo layout
+### Структура репозитория
 
 ```
 awesome-cctv-cameras/
-├── cameras/              # source of truth — one JSON per camera, grouped by brand
-│   ├── hikvision/        # 209 cameras
-│   ├── dahua/            # 156 cameras
-│   ├── reolink/          # 114 cameras
-│   └── …68 more brands
-├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 2,101 cameras as one array
-│   └── cameras.csv       # flattened for spreadsheets
+├── cameras/              # источник истины — один JSON на камеру, по брендам
+│   ├── hikvision/        # 209 камер
+│   ├── dahua/            # 156 камер
+│   ├── reolink/          # 114 камер
+│   └── …68 брендов
+├── data/                 # ГЕНЕРИРУЕТСЯ — не редактировать вручную
+│   ├── cameras.json      # все 2 101 камера одним массивом
+│   └── cameras.csv       # плоская таблица для Excel/Google Sheets
 ├── schema/
 │   └── camera.schema.json
 ├── scripts/
 │   └── build.js
-├── configs/              # Frigate / Home Assistant integration configs
+├── configs/              # конфиги для Frigate / Home Assistant
 └── docs/
     └── demo.html
 ```
 
 ---
 
-## Query examples
+## Примеры запросов
 
 ```js
 const cameras = require('./data/cameras.json');
 
-// 4K PoE outdoor cameras
+// 4K PoE уличные камеры
 cameras.filter(c =>
   c.connectivity?.includes('poe') &&
   c.resolution.megapixels >= 8
 );
 
-// Color night vision
+// Цветное ночное видение
 cameras.filter(c => c.night_vision?.type === 'color');
 
-// No subscription fee
+// Без абонентской платы
 cameras.filter(c =>
   c.features?.some(f => f.toLowerCase().includes('no subscription'))
 );
 
-// UK market
+// Рынок UK
 cameras.filter(c => c.markets?.includes('UK'));
 ```
 
-Or open `data/cameras.csv` in any spreadsheet.
+Или открыть `data/cameras.csv` в любой таблице.
 
 ---
 
-## Schema
+## Схема данных
 
-Each entry follows [`schema/camera.schema.json`](schema/camera.schema.json).
+Каждая запись соответствует [`schema/camera.schema.json`](schema/camera.schema.json).
 
-**Required fields:**
+**Обязательные поля:**
 ```json
 {
   "id": "reolink-rlc-823a",
@@ -125,9 +131,9 @@ Each entry follows [`schema/camera.schema.json`](schema/camera.schema.json).
 }
 ```
 
-**Common optional fields:**
+**Основные опциональные поля:**
 
-| Field | Type | Example |
+| Поле | Тип | Пример |
 |---|---|---|
 | `connectivity` | `string[]` | `["poe", "wifi"]` |
 | `night_vision.type` | `string` | `"color"` / `"ir"` |
@@ -138,66 +144,66 @@ Each entry follows [`schema/camera.schema.json`](schema/camera.schema.json).
 | `protocols` | `string[]` | `["onvif", "rtsp"]` |
 | `markets` | `string[]` | `["UK", "EU"]` |
 | `features` | `string[]` | `["no subscription"]` |
-| `sources` | `string[]` | datasheet URLs |
+| `sources` | `string[]` | ссылки на даташиты |
 
 ---
 
-## Brands
+## Бренды
 
-71 brands across every market segment:
+71 бренд во всех сегментах рынка:
 
-| Brand | Cameras | Segment |
+| Бренд | Камер | Сегмент |
 |---|---|---|
-| Hikvision | 209 | Enterprise + consumer, global |
-| Dahua | 156 | Enterprise + consumer, global |
-| Bosch | 153 | Enterprise + thermal, EU/global |
+| Hikvision | 209 | Enterprise + потребительский, global |
+| Dahua | 156 | Enterprise + потребительский, global |
+| Bosch | 153 | Enterprise + тепловизоры, EU/global |
 | ACTi | 119 | Enterprise IP, NDAA |
-| Reolink | 114 | Prosumer, no-subscription |
-| EZVIZ | 87 | Consumer, global |
-| ABUS | 85 | Consumer + professional, DE/AT/CH |
+| Reolink | 114 | Prosumer, без подписки |
+| EZVIZ | 87 | Потребительский, global |
+| ABUS | 85 | Потребительский + профессиональный, DE/AT/CH |
 | Axis | 61 | Enterprise premium, global |
-| Hi-Focus | 60 | Made-in-India, BIS certified |
+| Hi-Focus | 60 | Производство в Индии, BIS |
 | Kedacom | 58 | Enterprise, CN/global |
-| IMOU | 56 | Consumer + prosumer, global |
-| Tapo | 47 | Budget consumer, global |
-| Eufy | 46 | No-subscription consumer |
+| IMOU | 56 | Потребительский + prosumer, global |
+| Tapo | 47 | Бюджетный, global |
+| Eufy | 46 | Без подписки, потребительский |
 | Hanwha | 45 | Enterprise AI, Korea/global |
-| Lorex | 40 | Consumer NVR systems, CA/US |
+| Lorex | 40 | Потребительские NVR-системы, CA/US |
 | … | … | … |
 
-Full list with counts in [`cameras/`](cameras/).
+Полный список с количеством камер — в [`cameras/`](cameras/).
 
 ---
 
-## Contributing
+## Участие в проекте
 
-Three ways to add a camera:
+Три способа добавить камеру:
 
-| | Method | Best for |
+| | Способ | Подходит для |
 |---|---|---|
-| 🌐 | [Open an issue](../../issues/new?template=add-camera.yml) | Anyone — web form, no clone needed |
-| 🧙 | `npm run add` | Guided CLI wizard, writes JSON for you |
-| 🛠 | Edit JSON directly | Developers — see [CONTRIBUTING.md](CONTRIBUTING.md) |
+| 🌐 | [Открыть issue](../../issues/new?template=add-camera.yml) | Любой — веб-форма, клонировать не нужно |
+| 🧙 | `npm run add` | CLI-мастер, создаёт JSON автоматически |
+| 🛠 | Редактировать JSON напрямую | Разработчики — см. [CONTRIBUTING.md](CONTRIBUTING.md) |
 
 ```bash
 git clone https://github.com/Mukller/awesome-cctv-cameras.git
 cd awesome-cctv-cameras && npm install
-npm run add   # wizard
-npm run build # validate
+npm run add   # мастер добавления
+npm run build # валидация
 ```
 
-Report a data error → [correction issue](../../issues/new?template=correction.yml)
+Нашли ошибку в данных → [issue с исправлением](../../issues/new?template=correction.yml)
 
 ---
 
-## License
+## Лицензия
 
-Data — [CC0 1.0](LICENSE) (public domain). Free to use, copy, redistribute with no restrictions.  
-Trademarks and model names belong to their respective owners.
+Данные — [CC0 1.0](LICENSE) (общественное достояние). Свободно использовать, копировать, распространять без ограничений.  
+Товарные знаки и названия моделей принадлежат их владельцам.
 
 ---
 
-## Original author
+## Автор оригинала
 
-Database originally created and maintained by **[ch-bas](https://github.com/ch-bas)** — [github.com/ch-bas/cctv-camera-database](https://github.com/ch-bas/cctv-camera-database).  
-Data is CC0 — copied and redistributed freely as intended.
+База данных создана и поддерживается **[ch-bas](https://github.com/ch-bas)** — [github.com/ch-bas/cctv-camera-database](https://github.com/ch-bas/cctv-camera-database).  
+Данные CC0 — скопировано и распространяется свободно согласно намерению автора.
