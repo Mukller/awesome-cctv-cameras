@@ -1,78 +1,52 @@
-# CCTV Camera Database
+# awesome-cctv-cameras
 
-An open, structured database of 2,101 CCTV / IP camera models and their technical specifications, covering 71 brands across every market segment — from budget consumer WiFi cameras to enterprise PTZ domes and thermal imaging systems. Each camera is a validated JSON file, aggregated into a single queryable dataset (JSON + CSV).
+> Curated open database of 2,100+ CCTV / IP camera specs — machine-readable, CC0, no paywalls.
 
-[![cameras](https://img.shields.io/badge/cameras-1%2C896-blue)](data/cameras.json)
-[![brands](https://img.shields.io/badge/brands-71-green)](cameras/)
-[![license](https://img.shields.io/badge/license-CC0-lightgrey)](LICENSE)
+[![cameras](https://img.shields.io/badge/cameras-2101-blue?style=flat-square)](data/cameras.json)
+[![brands](https://img.shields.io/badge/brands-71-green?style=flat-square)](cameras/)
+[![license](https://img.shields.io/badge/license-CC0-lightgrey?style=flat-square)](LICENSE)
+[![schema](https://img.shields.io/badge/schema-validated-brightgreen?style=flat-square)](schema/camera.schema.json)
 
----
-
-## Why this exists
-
-Camera spec sheets are scattered across vendor PDFs, retailer pages, and paywalled databases (IPVM, etc.) in inconsistent formats. This repo normalises them into one machine-readable structure so they can be compared, filtered, and reused.
-
-**The dataset is CC0 and always will be** — free to use, copy, and redistribute with no restrictions. The website is just a convenient viewer; the data here is the source of truth.
+Camera spec sheets are buried in vendor PDFs, paywalled databases (IPVM etc.), and inconsistent retailer pages. This repo normalises them into validated JSON — one file per camera, one big queryable array, one CSV for spreadsheets.
 
 ---
 
-## Browse online
+## Contents
 
-**[Browse the database → cctv-database.com](https://cctv-database.com)**  
-
-Prefer to self-host or browse offline? A [standalone demo](docs/demo.html) (just `demo.html` + `cameras.json`, no build step) is included — serve the `docs/` folder locally with any static server, e.g. `python3 -m http.server` inside `docs/`, then open it.  
-
-<p align="center">
-  <img src="docs/demo.gif" alt="CCTV Camera Database — browse, search, filter, and inspect 1,296 cameras across 64 brands" width="800" />
-</p>
-
-**What you see above:**
-- **Search** — instant full-text search across brand, model, and features
-- **Filter** — narrow by brand, camera type, night vision, resolution, or market
-- **Sort** — click any column header to sort ascending/descending
-- **Detail drawer** — click a row to slide open the full spec sheet (resolution, connectivity, protocols, storage, audio, pricing, source links)
-- **Pagination** — page through all 2,101 cameras, 25 per page
-- **Stats bar** — live counts for total cameras, brands, 4K+, WiFi, and no-subscription models
+- [Stats](#stats)
+- [Browse](#browse)
+- [Quick start](#quick-start)
+- [Query examples](#query-examples)
+- [Schema](#schema)
+- [Brands](#brands)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## How this was built
+## Stats
 
-The database was assembled with the help of [Claude Code](https://claude.ai/code).
-
-Specs are sourced from manufacturer datasheets and reputable retailer listings —
-each entry includes a `sources` array with URLs. As with any compiled dataset,
-errors are possible; always verify against the official datasheet before purchasing
-or deploying.
-
-The demo video was produced with [hve-spielberg](https://github.com/nebrass/hve-spielberg),
-a Claude Code skill for AI-powered video production built on [Remotion](https://remotion.dev).
+| | |
+|---|---|
+| Cameras | **2,101** |
+| Brands | **71** |
+| Form factors | 11 |
+| PoE wired | 1,279 |
+| WiFi | 503 |
+| Battery / wire-free | 180 |
+| 4K / 8MP+ | 545 |
+| With Frigate / HA configs | 1,507 |
 
 ---
 
-## Repository layout
+## Browse
 
-```
-cctv-camera-database/
-├── cameras/              # source of truth — one JSON file per camera, grouped by brand
-│   ├── hikvision/        # 209 cameras
-│   ├── reolink/          # 116 cameras
-│   ├── dahua/            # 156 cameras
-│   ├── hanwha/           #  45 cameras
-│   ├── axis/             #  66 cameras
-│   ├── tapo/             #  62 cameras
-│   └── …60 more brands
-├── data/                 # GENERATED — do not edit by hand
-│   ├── cameras.json      # all 2,101 cameras as one array
-│   └── cameras.csv       # flattened, spreadsheet-friendly
-├── schema/
-│   └── camera.schema.json
-├── scripts/
-│   └── build.js          # aggregates + validates cameras/ → data/
-├── docs/
-│   └── glossary.md
-├── CONTRIBUTING.md
-└── LICENSE
+Live viewer → **[cctv-database.com](https://cctv-database.com)**
+
+Offline: serve `docs/` with any static server and open `demo.html` (no build step needed).
+
+```bash
+cd docs && python3 -m http.server
 ```
 
 ---
@@ -80,162 +54,67 @@ cctv-camera-database/
 ## Quick start
 
 ```bash
-npm install   # installs Ajv for schema validation (no runtime deps)
-npm run build # validates all JSON, writes data/cameras.json + data/cameras.csv
+git clone https://github.com/Mukller/awesome-cctv-cameras.git
+cd awesome-cctv-cameras
+npm install   # installs Ajv for schema validation only
+npm run build # validates all JSON → writes data/cameras.json + data/cameras.csv
 ```
 
-### Querying the data
+### Repo layout
+
+```
+awesome-cctv-cameras/
+├── cameras/              # source of truth — one JSON per camera, grouped by brand
+│   ├── hikvision/        # 209 cameras
+│   ├── dahua/            # 156 cameras
+│   ├── reolink/          # 114 cameras
+│   └── …68 more brands
+├── data/                 # GENERATED — do not edit by hand
+│   ├── cameras.json      # all 2,101 cameras as one array
+│   └── cameras.csv       # flattened for spreadsheets
+├── schema/
+│   └── camera.schema.json
+├── scripts/
+│   └── build.js
+├── configs/              # Frigate / Home Assistant integration configs
+└── docs/
+    └── demo.html
+```
+
+---
+
+## Query examples
 
 ```js
 const cameras = require('./data/cameras.json');
 
-// All 4K PoE outdoor cameras
-const poe4k = cameras.filter(c =>
+// 4K PoE outdoor cameras
+cameras.filter(c =>
   c.connectivity?.includes('poe') &&
   c.resolution.megapixels >= 8
 );
 
-// All cameras with color night vision
-const colorNight = cameras.filter(c =>
-  c.night_vision?.type === 'color'
-);
+// Color night vision
+cameras.filter(c => c.night_vision?.type === 'color');
 
-// All cameras for the UK market
-const uk = cameras.filter(c =>
-  c.markets?.includes('UK')
-);
-
-// All cameras with no subscription fee
-const noSub = cameras.filter(c =>
+// No subscription fee
+cameras.filter(c =>
   c.features?.some(f => f.toLowerCase().includes('no subscription'))
 );
+
+// UK market
+cameras.filter(c => c.markets?.includes('UK'));
 ```
 
-Or open `data/cameras.csv` in any spreadsheet for a quick browse.
-
----
-
-## Coverage
-
-### By the numbers
-
-| Metric | Count |
-|--------|-------|
-| Total cameras | **2,101** |
-| Brands | **71** |
-| Form factors | 11 (bullet, dome, turret, PTZ, dual-lens, panoramic, covert, box, fisheye, floodlight, doorbell) |
-| PoE wired | 1,279 |
-| WiFi | 503 |
-| Battery / wire-free | 180 |
-| 4K / 8MP+ | 545 |
-| 4–5MP | 706 |
-| 1080p–2MP | 487 |
-| With integration configs (Frigate / Home Assistant) | 1,507 | 1,505 | 1,507 | 1,514 | 1,533 | 1,321 |
-
-### All 71 brands
-
-| Brand | Cameras | Segment |
-|-------|---------|---------|
-| Hikvision | 209 | Enterprise + consumer, global |
-| Dahua | 156 | Enterprise + consumer, global |
-| Bosch | 153 | Enterprise + thermal, EU/global |
-| ACTi | 119 | Enterprise IP + analog, NDAA, TW/global |
-| Reolink | 114 | Prosumer, no-subscription, global |
-| EZVIZ (Hikvision) | 87 | Consumer, global |
-| ABUS | 85 | Consumer + professional, GDPR-first, DE/AT/CH |
-| Axis | 61 | Enterprise premium, global |
-| Hi-Focus | 60 | Made-in-India, BIS certified, IN |
-| Kedacom | 58 | Enterprise, CN/global |
-| IMOU (Dahua) | 56 | Consumer + prosumer, global |
-| Tapo (TP-Link) | 47 | Consumer budget, global |
-| Eufy (Anker) | 46 | Consumer no-subscription, global |
-| Hanwha | 45 | Enterprise AI, Korea/global |
-| Lorex | 40 | Consumer NVR systems, CA/US |
-| Speco | 31 | Professional/commercial (NDAA), US |
-| CP Plus | 26 | India #2 brand, IN |
-| Arlo | 25 | Consumer premium wire-free, global |
-| Ubiquiti UniFi | 25 | Prosumer/SMB, US/global |
-| VIGI (TP-Link) | 25 | Business/SMB PoE, global |
-| HiLook (Hikvision) | 23 | Budget installer, EU/UK/AU |
-| Ajax | 22 | Professional alarm + wired PoE cameras, EU/UK |
-| Foscam | 22 | Consumer WiFi/PoE, global |
-| Ring (Amazon) | 21 | Consumer ecosystem, global |
-| Avigilon | 18 | Enterprise NDAA, global |
-| SV3C | 17 | Budget consumer, CN/US |
-| Amcrest | 16 | Prosumer, global |
-| Wyze | 14 | Budget consumer, US |
-| Annke | 13 | Prosumer, global |
-| Blink (Amazon) | 12 | Budget battery, US/UK/EU |
-| GeoVision | 12 | Enterprise, TW/Asia/global |
-| Google Nest | 12 | Consumer smart home, global |
-| Instar | 12 | Privacy-first prosumer, DE/EU |
-| Milesight | 12 | Prosumer/Enterprise IoT, global |
-| Swann | 12 | Consumer, AU/US/UK |
-| Tiandy | 11 | Enterprise + prosumer, CN/ME/Africa |
-| Vivotek | 11 | Enterprise AI, global |
-| Costar | 10 | Enterprise (Arecont successor), US |
-| FLIR (Teledyne) | 10 | Thermal imaging, NA/EU |
-| Pelco | 10 | Enterprise legacy, NA/global |
-| Lupus Electronics | 9 | Privacy-first, DE/AT/CH |
-| TVT | 9 | Prosumer budget, CN/IN/SE Asia |
-| Intelbras | 8 | #1 Latin America, BR/AR/LATAM |
-| Luma | 8 | Custom-install (SnapAV), US |
-| Mobotix | 8 | Enterprise GDPR-first, EU |
-| LTS | 7 | Prosumer/installer, US |
-| Uniview | 7 | Enterprise NDAA, global |
-| Yale | 7 | Consumer smart home, UK/EU |
-| LaView | 6 | Consumer WiFi/solar/4G, US |
-| Uniarch (Uniview) | 6 | Budget NDAA sub-brand, global |
-| Camius | 4 | Consumer direct, US |
-| Canon | 4 | Enterprise optical, JP/global |
-| Godrej | 4 | Consumer, IN |
-| Longse | 4 | OEM/budget, CN/global |
-| March Networks | 4 | Enterprise retail/banking, NA |
-| Netatmo | 4 | Privacy-first no-subscription, EU |
-| Qubo | 4 | Consumer, IN |
-| SimpliSafe | 4 | DIY monitored security, US |
-| Synology | 4 | NAS-native cameras, global |
-| ADT | 3 | Monitored security, US |
-| i-PRO | 3 | Enterprise AI (ex-Panasonic), JP/global |
-| Somfy | 3 | Smart home, FR/EU |
-| Verkada | 3 | Cloud-managed enterprise, US/CA |
-| Aqara | 2 | Smart home HomeKit, EU/global |
-| Hive | 2 | Smart home, UK |
-| Honeywell | 2 | Enterprise, US/IN |
-| NetCamCenter | 2 | System integrator (Bosch OEM), DE |
-| Steinel | 2 | Outdoor smart light/cam, DE/AT/CH |
-| Bosch Smart Home | 1 | Consumer smart home, DE/AT/CH |
-| IDIS | 1 | Enterprise DirectIP, KR/global |
-| Kasa | 1 | Consumer budget, global |
-
-### Market coverage
-
-Cameras are tagged with `markets[]` where relevant:
-
-| Market | Tagged cameras | Key brands |
-|--------|---------------|-----------|
-| EU | 88 | ABUS, Netatmo, Aqara, Somfy, Axis |
-| DE | 58 | ABUS, Lupus, Steinel, Bosch Smart Home |
-| AT / CH | 40 each | ABUS, Lupus, Aqara, Netatmo |
-| UK | 39 | Yale, Hive, Ajax, Ring, HiLook |
-| global | 37 | Hikvision, Axis, Hanwha, i-PRO |
-| IN | 32 | CP Plus, Qubo, Godrej, Zebronics |
-| US | 28 | Wyze, Blink, Verkada, SimpliSafe, ADT |
-| FR | 25 | Somfy, Netatmo, EZVIZ |
-| AE / SA / MENA | 22 each | Hikvision, Dahua, Tapo, EZVIZ |
-| VN | 9 | KBvision, Hikvision, Dahua, EZVIZ |
-| JP | 6 | i-PRO, Canon, Tapo |
-| KR | 5 | Hanwha, IDIS |
-| AU | 13 | Swann, Reolink, Ring, Arlo, Eufy |
-| CA | 13 | Lorex, Avigilon, Ring, Reolink |
-| AR / BR / CL / LATAM | 10 each | Intelbras, Hikvision, Dahua, EZVIZ |
+Or open `data/cameras.csv` in any spreadsheet.
 
 ---
 
 ## Schema
 
-Each camera JSON follows `schema/camera.schema.json`. Required fields:
+Each entry follows [`schema/camera.schema.json`](schema/camera.schema.json).
 
+**Required fields:**
 ```json
 {
   "id": "reolink-rlc-823a",
@@ -246,80 +125,79 @@ Each camera JSON follows `schema/camera.schema.json`. Required fields:
 }
 ```
 
-Common optional fields:
+**Common optional fields:**
 
 | Field | Type | Example |
-|-------|------|---------|
-| `connectivity` | `string[]` | `["poe", "wifi", "ethernet"]` |
-| `night_vision.type` | `string` | `"color"` / `"ir"` / `"none"` |
+|---|---|---|
+| `connectivity` | `string[]` | `["poe", "wifi"]` |
+| `night_vision.type` | `string` | `"color"` / `"ir"` |
 | `night_vision.range_m` | `number` | `30` |
-| `power.method` | `string` | `"PoE (802.3af) / DC 12V"` |
+| `power.method` | `string` | `"PoE (802.3af)"` |
 | `ip_rating` | `string` | `"IP67"` |
 | `audio.two_way` | `boolean` | `true` |
 | `protocols` | `string[]` | `["onvif", "rtsp"]` |
-| `markets` | `string[]` | `["UK", "EU", "DE"]` |
-| `features` | `string[]` | `["no subscription", "IP67"]` |
-| `sources` | `string[]` | datasheet / retailer URLs |
+| `markets` | `string[]` | `["UK", "EU"]` |
+| `features` | `string[]` | `["no subscription"]` |
+| `sources` | `string[]` | datasheet URLs |
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full field reference and naming conventions.
+---
+
+## Brands
+
+71 brands across every market segment:
+
+| Brand | Cameras | Segment |
+|---|---|---|
+| Hikvision | 209 | Enterprise + consumer, global |
+| Dahua | 156 | Enterprise + consumer, global |
+| Bosch | 153 | Enterprise + thermal, EU/global |
+| ACTi | 119 | Enterprise IP, NDAA |
+| Reolink | 114 | Prosumer, no-subscription |
+| EZVIZ | 87 | Consumer, global |
+| ABUS | 85 | Consumer + professional, DE/AT/CH |
+| Axis | 61 | Enterprise premium, global |
+| Hi-Focus | 60 | Made-in-India, BIS certified |
+| Kedacom | 58 | Enterprise, CN/global |
+| IMOU | 56 | Consumer + prosumer, global |
+| Tapo | 47 | Budget consumer, global |
+| Eufy | 46 | No-subscription consumer |
+| Hanwha | 45 | Enterprise AI, Korea/global |
+| Lorex | 40 | Consumer NVR systems, CA/US |
+| … | … | … |
+
+Full list with counts in [`cameras/`](cameras/).
 
 ---
 
 ## Contributing
 
-**Three paths — pick the one that fits you:**
+Three ways to add a camera:
 
-| | Path | Best for |
-|-|------|---------|
-| 🌐 | [Open a GitHub issue](../../issues/new?template=add-camera.yml) | Anyone — fill a web form, no cloning needed |
-| 🧙 | `npm run add` — interactive CLI wizard | Regular contributors — guided questions, writes JSON for you |
+| | Method | Best for |
+|---|---|---|
+| 🌐 | [Open an issue](../../issues/new?template=add-camera.yml) | Anyone — web form, no clone needed |
+| 🧙 | `npm run add` | Guided CLI wizard, writes JSON for you |
 | 🛠 | Edit JSON directly | Developers — see [CONTRIBUTING.md](CONTRIBUTING.md) |
 
-The wizard flow:
 ```bash
-git clone https://github.com/YOUR_USERNAME/cctv-camera-database.git
-cd cctv-camera-database && npm install
-npm run add      # asks questions, writes the JSON file
-npm run build    # validates everything
+git clone https://github.com/Mukller/awesome-cctv-cameras.git
+cd awesome-cctv-cameras && npm install
+npm run add   # wizard
+npm run build # validate
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full field reference, naming conventions, and what makes a good entry.
+Report a data error → [correction issue](../../issues/new?template=correction.yml)
 
 ---
-
-## Roadmap
-
-- [x] JSON Schema validation in CI (GitHub Actions)
-- [ ] Static web frontend — search, filter, compare
-- [ ] Side-by-side comparison view (2–4 cameras)
-- [ ] Frigate-compatible config export
-- [ ] Home Assistant integration template
-- [ ] API endpoint (read-only, hosted)
-
----
-
-## Community
-
-| | |
-|-|--|
-| 🐛 Report a data error | [Open a correction issue](../../issues/new?template=correction.yml) |
-| ➕ Add a missing camera | [Open a camera submission](../../issues/new?template=add-camera.yml) |
-| 🔒 Report a security issue | [GitHub Security Advisories](../../security/advisories/new) |
-| 💬 Code of conduct | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) |
-| 📋 Changelog | [CHANGELOG.md](CHANGELOG.md) |
-
-## Disclaimer
-
-Specifications are compiled from manufacturer datasheets and reputable retailers and may contain errors or become outdated. Always confirm against the official datasheet (linked in each entry's `sources` array) before purchasing. Not affiliated with any manufacturer.
 
 ## License
 
-Data is released under [CC0 1.0](LICENSE) (public domain). Trademarks and model names belong to their respective owners.
+Data — [CC0 1.0](LICENSE) (public domain). Free to use, copy, redistribute with no restrictions.  
+Trademarks and model names belong to their respective owners.
 
 ---
 
-## Original Author
+## Original author
 
-This database was originally created and maintained by **[ch-bas](https://github.com/ch-bas)**.  
-Source repository: [github.com/ch-bas/cctv-camera-database](https://github.com/ch-bas/cctv-camera-database)  
-The data is released under CC0 — copied and redistributed freely as intended by the original author.
+Database originally created and maintained by **[ch-bas](https://github.com/ch-bas)** — [github.com/ch-bas/cctv-camera-database](https://github.com/ch-bas/cctv-camera-database).  
+Data is CC0 — copied and redistributed freely as intended.
