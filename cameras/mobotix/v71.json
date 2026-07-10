@@ -1,0 +1,70 @@
+{
+  "id": "mobotix-v71",
+  "brand": "Mobotix",
+  "model": "V71",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 4,
+    "label": "4K UHD"
+  },
+  "field_of_view_deg": "100h",
+  "night_vision": {
+    "type": "none",
+    "range_m": 0
+  },
+  "power": {
+    "method": "PoE 802.3af"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP30",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "MOBOTIX V71 4K indoor box camera",
+    "MOBOTIX 7 AI platform",
+    "Certified Apps",
+    "2TB microSD",
+    "IP30"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/v71"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/mobotix.pro/mxpeg"
+    },
+    "home_assistant": {
+      "integration": "motionEye",
+      "notes": "Use motionEye or generic camera integration with MJPEG."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select 'Mobotix' profile. Uses MxPEG codec by default; switch to H.264 in camera settings for Blue Iris."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

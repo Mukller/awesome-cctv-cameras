@@ -1,0 +1,91 @@
+{
+  "id": "reolink-argus-magicam",
+  "brand": "Reolink",
+  "model": "Argus MagiCam",
+  "aliases": [
+    "Reolink Power-Efficient Series"
+  ],
+  "release_year": 2026,
+  "type": "box",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/3.2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.3 (fixed)",
+    "aperture": "F2.2",
+    "varifocal": false
+  },
+  "field_of_view_deg": "113.3 horizontal / 62.7 vertical / 132 diagonal",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "2x AA lithium batteries (up to 9 months)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Qualcomm QCC730 Micro-Power WiFi (96% longer battery than standard)",
+    "9 months battery on 2x AA cells",
+    "compact cube form factor",
+    "person detection",
+    "no subscription",
+    "Power-Efficient Series"
+  ],
+  "release_notes": "Launched June 2026 alongside OMVI Series.",
+  "sources": [
+    "https://reolink.com/product/argus-magicam/",
+    "https://reolink.com/blog/reolink-argus-magicam-review/"
+  ],
+  "power_source": [
+    "battery",
+    "dc"
+  ],
+  "dimensions_mm": "Φ68 x 68 x 28.86",
+  "weight_g": 108,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "Clear (battery-powered)",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.264"
+      },
+      {
+        "name": "Clear (DC power)",
+        "resolution": "1920x1080",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "last_verified": "2026-07-04"
+}

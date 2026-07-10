@@ -1,0 +1,61 @@
+{
+  "id": "simplisafe-outdoor-cam-v2",
+  "brand": "SimpliSafe",
+  "model": "Outdoor Security Camera Gen 2",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "markets": [
+    "US"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "140 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 12
+  },
+  "power": {
+    "method": "Hardwired (AC mains)"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K color night vision Gen 2 upgrade",
+    "AI person/vehicle detection",
+    "Intruder Intervention live response",
+    "SimpliSafe Smart Alarm integration",
+    "no long-term contract",
+    "IP65"
+  ],
+  "sources": [
+    "https://simplisafe.com/cameras"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-06"
+}

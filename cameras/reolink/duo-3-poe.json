@@ -1,0 +1,106 @@
+{
+  "id": "reolink-duo-3-poe",
+  "brand": "Reolink",
+  "model": "Duo 3 PoE",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 16,
+    "max_width": 7680,
+    "max_height": 2160,
+    "label": "16MP"
+  },
+  "sensor": "Dual 1/2.7\" CMOS (4K per lens)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 55 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af, 48V, active) / DC 12V, 2A, <12W",
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "seamless 180° panoramic stitching",
+    "person/vehicle/animal detection",
+    "spotlight color night vision",
+    "motion tracking",
+    "no subscription required"
+  ],
+  "release_year": 2024,
+  "sources": [
+    "https://reolink.com/product/reolink-duo-3-poe/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "195 x 103 x 56",
+  "weight_g": 680,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "Main Stream",
+        "resolution": "7680x2160",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

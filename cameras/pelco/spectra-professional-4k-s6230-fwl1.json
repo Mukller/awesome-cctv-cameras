@@ -1,0 +1,78 @@
+{
+  "id": "pelco-spectra-professional-4k-s6230-fwl1",
+  "brand": "Pelco",
+  "model": "Spectra Professional 4K S6230-FWL1",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.5-202",
+    "varifocal": true
+  },
+  "field_of_view_deg": "54-2.1 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt) / 24VAC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "30x optical zoom",
+    "360° continuous pan",
+    "SureVision WDR",
+    "analytics-ready",
+    "autotracking",
+    "H.265 compression"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://www.pelco.com/products/spectra-professional-4k/"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Pelco",
+      "notes": "Select 'Pelco' profile. ONVIF supported."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

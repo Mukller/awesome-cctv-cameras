@@ -1,0 +1,107 @@
+{
+  "id": "bosch-nde-8704-r",
+  "brand": "Bosch",
+  "model": "FLEXIDOME 8100i (NDE-8704-R)",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4K UHD",
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8.3
+  },
+  "video": {
+    "max_fps": 30,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "sensor": "1/1.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.9-10",
+    "aperture": "F1.6-F2.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "117 to 44 (horizontal)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af/802.3at) or 12-26 VDC / 24 VAC",
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66/IP67/IP6K9K",
+  "features": [
+    "PTRZ remote commissioning (motorized pan-tilt-roll-zoom)",
+    "Starlight low-light technology",
+    "HDR (120 dB)",
+    "Electronic Image Stabilization (EIS)",
+    "IVA Pro Buildings (deep-learning person/vehicle detection)",
+    "Vandal-resistant (IK11)",
+    "NEMA 4X enclosure",
+    "Day/Night with built-in IR illuminator",
+    "AES-256 / TLS encryption"
+  ],
+  "operating_temp_c": "-50 to 60",
+  "dimensions_mm": "175 (diameter) x 148 (height)",
+  "release_year": 2024,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://netcamcenter.de/de/produkte/ip-kameras/nde-8704-r",
+    "https://madison.tech/products/bosch-flexidome-8100i-nde-8704-r/",
+    "https://www.a1securitycameras.com/iqsight-nde-8704-r.html",
+    "https://www.ipsecuritydepot.com/bosch-nde-8704-rt/nde-8704-rt/",
+    "https://www.a1securitycameras.com/content/product_documents/66099/Datasheet_0ibkerug.pdf"
+  ],
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

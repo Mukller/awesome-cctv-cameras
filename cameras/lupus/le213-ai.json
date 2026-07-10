@@ -1,0 +1,92 @@
+{
+  "id": "lupus-le213-ai",
+  "brand": "Lupus Electronics",
+  "model": "LE213",
+  "aliases": [
+    "LUPUS LE213 AI Indoor Camera Personal Security Guard"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2026,
+  "markets": [
+    "DE",
+    "AT",
+    "CH",
+    "EU"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "Fixed",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "355 pan / 90 tilt",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "DC 5V (USB)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP20",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "AI object recognition (person/vehicle/animal)",
+    "automatic person detection + intruder alert",
+    "LUPUSEC alarm integration",
+    "indoor pan/tilt",
+    "local microSD storage no cloud",
+    "ONVIF/RTSP",
+    "DSGVO-compliant",
+    "German brand new 2026 model"
+  ],
+  "sources": [
+    "https://www.lupus-electronics.de/shop/en/Video-surveillance/Network-Cameras/Wifi-Cameras/LUPUS-LE213-WLAN-white-p.html"
+  ],
+  "power_source": [
+    "usb"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

@@ -1,0 +1,91 @@
+{
+  "id": "eufy-indoor-cam-c120",
+  "brand": "Eufy",
+  "model": "Indoor Cam C120",
+  "aliases": [
+    "T84001W1",
+    "T8400",
+    "Indoor Cam 2K"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "wifi"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "Fixed",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 horizontal / 57 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "5V/1A (USB, hardwired)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http",
+    "rtsp"
+  ],
+  "ip_rating": "IP20",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K budget plug-in indoor camera",
+    "AI person/pet detection",
+    "infrared night vision",
+    "local storage (microSD)",
+    "no subscription fee",
+    "RTSP / NAS support",
+    "Alexa / Google / HomeKit"
+  ],
+  "sources": [
+    "https://www.eufy.com/ca/products/t84001w1"
+  ],
+  "power_source": [
+    "usb"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+      "notes": "RTSP must be enabled per camera in the Eufy app (Storage > RTSP/NAS). Community-reported path; eufy does not publish the URL.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app."
+    }
+  }
+}

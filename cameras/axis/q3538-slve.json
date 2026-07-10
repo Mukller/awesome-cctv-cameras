@@ -1,0 +1,88 @@
+{
+  "id": "axis-q3538-slve",
+  "brand": "Axis",
+  "model": "Q3538-SLVE",
+  "aliases": [
+    "Axis 4K Stainless Steel Marine Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.2\" Progressive Scan RGB CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.2-12.9 (varifocal P-Iris)",
+    "aperture": "F1.8",
+    "varifocal": true
+  },
+  "field_of_view_deg": "103-49 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 40
+  },
+  "power": {
+    "method": "High PoE (802.3at)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP69K",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "marine-grade stainless steel housing",
+    "IP68 seawater resistant",
+    "ARTPEC-8 DLPU",
+    "Lightfinder 2.0",
+    "Forensic WDR",
+    "OptimizedIR",
+    "Electronic Image Stabilization",
+    "IK10+",
+    "for offshore/coastal/harsh chemical environments"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-q3538-slve"
+  ],
+  "last_verified": "2026-07-04",
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "eufy-solocam-s340",
+  "brand": "Eufy",
+  "model": "SoloCam S340",
+  "aliases": [
+    "T81701W1",
+    "3K Dual-Lens Solar Pan & Tilt"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "markets": [
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "3K wide + 2K telephoto dual-lens"
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Dual: 3K wide + 2K telephoto (hybrid 8x zoom)",
+    "aperture": "f/1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "135",
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "Adjustable/removable 2.2W solar panel + built-in rechargeable battery"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false,
+    "notes": "8 GB built-in eMMC; HomeBase 3 (S380) compatible"
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-lens: 3K wide + 2K 8x hybrid-zoom telephoto",
+    "355 pan / 70 tilt with auto-tracking",
+    "dual solar panels, always-on power",
+    "color night vision",
+    "no subscription fee",
+    "local HomeBase storage",
+    "Alexa / Google Assistant"
+  ],
+  "operating_temp_c": "-20 to 50",
+  "sources": [
+    "https://www.eufy.com/products/t81701w1"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "last_verified": "2026-07-04"
+}

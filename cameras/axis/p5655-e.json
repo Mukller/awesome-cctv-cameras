@@ -1,0 +1,81 @@
+{
+  "id": "axis-p5655-e",
+  "brand": "Axis",
+  "model": "P5655-E",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2019,
+  "resolution": {
+    "megapixels": 2,
+    "label": "1080p HD"
+  },
+  "field_of_view_deg": "58.3-2.4 horizontal",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "PoE (802.3bt)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "pan/tilt/zoom",
+    "Axis P5655-E 32x outdoor PTZ",
+    "OptimizedIR",
+    "Lightfinder 2.0",
+    "IP66",
+    "IK10",
+    "AXIS Object Analytics",
+    "ARTPEC-7"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-p5655-e"
+  ],
+  "last_verified": "2026-07-04",
+  "markets": [
+    "global"
+  ],
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-137.6 (32x optical zoom)",
+    "varifocal": true
+  },
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

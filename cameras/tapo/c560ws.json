@@ -1,0 +1,101 @@
+{
+  "id": "tapo-c560ws",
+  "brand": "Tapo",
+  "model": "Tapo C560WS",
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "label": "4K 8MP",
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8
+  },
+  "lens": {
+    "focal_length_mm": "4",
+    "aperture": "f/1.6",
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 (Diagonal), 88 (Horizontal), 45 (Vertical)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12V/1A DC power adapter (100-240V AC input)"
+  },
+  "storage": {
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "onboard": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "VistaCam 360 outdoor 4K pan/tilt",
+    "360deg pan / 140deg tilt",
+    "WiFi 6 dual-band (2.4/5GHz)",
+    "4K starlight color night vision",
+    "on-device AI facial recognition",
+    "free person/pet/vehicle detection",
+    "360deg AI tracking",
+    "H500 compatible",
+    "24/7 continuous recording",
+    "no subscription"
+  ],
+  "sources": [
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c560ws/",
+    "https://www.tapo.com/en/product/smart-camera/tapo-c560ws/",
+    "https://www.tp-link.com/us/press/news/21827/"
+  ],
+  "aliases": [
+    "VistaCam 360"
+  ],
+  "release_year": 2025,
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 25
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS Starlight Sensor",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "147.4 x 74.7 x 165.4 (with bracket); 147.4 x 74.7 x 157.4 (without bracket)",
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-06-30"
+}

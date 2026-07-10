@@ -1,0 +1,63 @@
+{
+  "id": "ring-doorbell-elite",
+  "brand": "Ring",
+  "model": "Doorbell Elite",
+  "aliases": [
+    "Ring Video Doorbell Elite PoE"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2017,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p HD"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "160 horizontal / 90 vertical",
+  "night_vision": {
+    "type": "color",
+    "range_m": 5
+  },
+  "power": {
+    "method": "PoE (hardwired Ethernet — no WiFi required)"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP44",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "PoE wired Ethernet doorbell (no WiFi required)",
+    "most reliable Ring doorbell",
+    "1080p colour night vision",
+    "person/motion detection",
+    "two-way audio",
+    "Ring Protect plan",
+    "Alexa",
+    "popular enterprise/commercial buildings"
+  ],
+  "sources": [
+    "https://ring.com/products/doorbell-elite"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "markets": ["global"],
+  "last_verified": "2026-07-04"
+}

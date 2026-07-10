@@ -1,0 +1,83 @@
+{
+  "id": "ubiquiti-g4-ptz",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G4 PTZ",
+  "aliases": [
+    "UVC-G4-PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" 8MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.7-126.4 (22x optical zoom)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "64 horizontal / 37 vertical (wide); 2 horizontal / 37 vertical (tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 91
+  },
+  "power": {
+    "method": "PoE++, 42.5-57V DC; 42.9W max"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "dimensions_mm": "207 x 223.7 x 341.3",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K UHD pan-tilt-zoom camera, 22x optical zoom",
+    "360-degree continuous pan",
+    "IR night vision up to 91m (corrected from a rounded 100m)",
+    "Ambarella S5L66 processor",
+    "PoE++ powered",
+    "UniFi Protect ecosystem",
+    "auto-tracking"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g4-ptz",
+    "https://store.ui.com/us/en/products/uvc-g4-ptz"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

@@ -1,0 +1,85 @@
+{
+  "id": "ubiquiti-g5-flex",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G5 Flex",
+  "aliases": [
+    "UVC-G5-Flex"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1512,
+    "label": "2K"
+  },
+  "sensor": "5MP CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "102.4 horizontal / 54.9 vertical / 120.6 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 6
+  },
+  "power": {
+    "method": "PoE, 37-57V DC; 4W max"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IPX4",
+  "dimensions_mm": "48 (diameter) x 107.5",
+  "weight_g": 170,
+  "operating_temp_c": "-20 to 40",
+  "video": {
+    "max_fps": 30
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "flexible indoor/outdoor camera, successor to G3 Flex",
+    "IK04 tamper resistance, IPX4 rated \"while covered\"",
+    "multiple mounting options (desktop, wall, pole, hard-ceiling included; in-ceiling, pendant, Pro mount optional)",
+    "PoE powered",
+    "UniFi Protect ecosystem"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g5-flex",
+    "https://store.ui.com/us/en/products/uvc-g5-flex"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

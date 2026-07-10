@@ -1,0 +1,83 @@
+{
+  "id": "reolink-argus-4-pro",
+  "brand": "Reolink",
+  "model": "Argus 4 Pro",
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 5120,
+    "max_height": 1440,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4 (fixed)",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Built-in rechargeable battery / USB-C / solar panel optional"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K battery/solar",
+    "dual-lens 180° image stitching, no blind spots",
+    "dual-band WiFi 2.4/5GHz",
+    "spotlight color night vision",
+    "person/vehicle/animal detection",
+    "no subscription"
+  ],
+  "release_year": 2024,
+  "sources": [
+    "https://reolink.com/product/argus-4-pro/"
+  ],
+  "power_source": [
+    "battery",
+    "solar",
+    "usb"
+  ],
+  "dimensions_mm": "128 x 87 x 80",
+  "weight_g": 400,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "Clear/Main",
+        "resolution": "5120x1440",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "last_verified": "2026-07-04"
+}

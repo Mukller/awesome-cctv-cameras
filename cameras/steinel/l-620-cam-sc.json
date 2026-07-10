@@ -1,0 +1,65 @@
+{
+  "id": "steinel-l-620-cam-sc",
+  "brand": "Steinel",
+  "model": "L 620 CAM SC",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "markets": [
+    "DE",
+    "AT",
+    "CH",
+    "EU"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Hardwired (AC mains)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 32,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP44",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K QHD upgrade WiFi 6 SmartFriend app integration",
+    "180° pivoting camera",
+    "LED outdoor light",
+    "local storage only (GDPR-friendly)",
+    "AI person/vehicle/animal detection",
+    "IP44"
+  ],
+  "sources": [
+    "https://www.steinel.de/en/lights-sensors/products-oxid/lights/product-category/outdoor-lights-with-camera/l-620-cam-sc-065829.html"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-06"
+}

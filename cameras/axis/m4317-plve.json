@@ -1,0 +1,86 @@
+{
+  "id": "axis-m4317-plve",
+  "brand": "Axis",
+  "model": "M4317-PLVE",
+  "aliases": [
+    "Axis M4317-PLVE 6MP Panoramic Dome"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 2160,
+    "max_height": 2160,
+    "label": "6MP"
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.1",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 20
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "360° panoramic view",
+    "Lightfinder 2.0",
+    "Forensic WDR",
+    "Zipstream H.265",
+    "AXIS Object Analytics",
+    "Axis Edge Vault",
+    "outdoor-ready IP66/IK10"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-m4317-plve"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

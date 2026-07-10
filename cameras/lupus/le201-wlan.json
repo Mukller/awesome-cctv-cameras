@@ -1,0 +1,94 @@
+{
+  "id": "lupus-le201-wlan",
+  "brand": "Lupus Electronics",
+  "model": "LE201",
+  "aliases": [
+    "LUPUS LE201 WLAN WiFi Bullet Camera DE"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2019,
+  "markets": [
+    "DE",
+    "AT",
+    "CH",
+    "EU"
+  ],
+  "resolution": {
+    "megapixels": 1.3,
+    "max_width": 1280,
+    "max_height": 960,
+    "label": "1.3MP"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "92 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V (passive PoE adapter optional)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "NO mandatory cloud (DSGVO-compliant local-first)",
+    "LUPUSEC alarm system integration",
+    "WiFi outdoor bullet",
+    "30m IR",
+    "ONVIF/RTSP",
+    "H.265+",
+    "LUPUS SmartVision VMS",
+    "IP66",
+    "German support Conrad/Lupus-Electronics.de",
+    "€80–120"
+  ],
+  "sources": [
+    "https://www.lupus-electronics.de/shop/documents/Datenblatt_10201_LE201_WLAN_.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

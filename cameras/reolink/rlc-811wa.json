@@ -1,0 +1,96 @@
+{
+  "id": "reolink-rlc-811wa",
+  "brand": "Reolink",
+  "model": "RLC-811WA",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "105-31 horizontal / 55-17 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V/1A",
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "p2p"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5x optical zoom",
+    "WiFi 6",
+    "person/vehicle/animal detection",
+    "spotlight + siren",
+    "color night vision",
+    "time-lapse",
+    "no subscription"
+  ],
+  "sources": [
+    "https://reolink.com/product/rlc-811wa/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "80 x 72 x 238",
+  "weight_g": 863,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": "reolink-e1-outdoor-poe",
+  "brand": "Reolink",
+  "model": "E1 Outdoor PoE",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8-8",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "90-50 horizontal/53-30 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 12
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "355deg pan / 50deg tilt",
+    "3x optical zoom",
+    "auto-tracking",
+    "compact low-profile body",
+    "person/vehicle/animal detection",
+    "no subscription"
+  ],
+  "release_year": 2022,
+  "sources": [
+    "https://reolink.com/product/e1-outdoor-poe/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "Φ90 x 120",
+  "weight_g": 458,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "Main stream",
+        "resolution": "3840x2160",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "vivotek-sd9384-ehl",
+  "brand": "Vivotek",
+  "model": "SD9384-EHL",
+  "aliases": [
+    "Vivotek 4K 32x PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.5\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-150 (32x optical zoom)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "59-1.9 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "High PoE (802.3bt) / AC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "32x optical zoom",
+    "4K 30fps",
+    "WDR Pro",
+    "SNV low-light",
+    "Smart VCA analytics",
+    "AI event detection",
+    "built-in mic & speaker",
+    "built-in heater"
+  ],
+  "sources": [
+    "https://www.vivotek.com/sd9384-ehl"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Vivotek",
+      "notes": "Select 'Vivotek' profile. ONVIF supported."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

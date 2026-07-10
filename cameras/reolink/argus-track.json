@@ -1,0 +1,93 @@
+{
+  "id": "reolink-argus-track",
+  "brand": "Reolink",
+  "model": "Argus Track",
+  "aliases": [
+    "8MP Battery PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (wide) / 8 (tele)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "355 pan / 50 tilt",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "Built-in rechargeable battery / solar panel optional"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "p2p"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "355° pan / 50° tilt battery PTZ",
+    "dual-lens 6X hybrid zoom (2.8mm wide + 8mm tele) with auto-zoom tracking",
+    "spotlight color night vision",
+    "person/vehicle/animal detection",
+    "no subscription",
+    "solar panel compatible"
+  ],
+  "release_year": 2024,
+  "sources": [
+    "https://reolink.com/product/argus-track/",
+    "https://reolink.com/blog/reolink-argus-track-review/"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "dimensions_mm": "Ø85 x 84 x 118",
+  "weight_g": 476,
+  "operating_temp_c": "-10 to 55",
+  "last_verified": "2026-07-04",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "Main stream",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      },
+      {
+        "name": "Sub stream",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

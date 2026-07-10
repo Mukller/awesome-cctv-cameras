@@ -1,0 +1,83 @@
+{
+  "id": "reolink-omvi-x16-poe",
+  "brand": "Reolink",
+  "model": "OMVI X16 PoE",
+  "aliases": [
+    "CES 2026 Innovation Award Honoree"
+  ],
+  "release_year": 2026,
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 24,
+    "label": "24MP (16MP panoramic + 8MP PTZ)"
+  },
+  "sensor": "3x CMOS: 2x 8MP (panoramic, 16MP combined) + 1x 8MP (PTZ, 4K, 16x optical zoom)",
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "Fixed panoramic + 16x optical zoom PTZ",
+    "varifocal": true
+  },
+  "field_of_view_deg": "180 H panoramic (0-22deg motorized tilt, upper lenses) + 360deg endless pan / 95deg tilt (PTZ lens)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 75
+  },
+  "power": {
+    "method": "PoE / DC 12V (exact PoE standard/class not yet published by Reolink)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "release_notes": "Flagship OMVI X16 PoE was shown at CES 2026 (Jan 2026) and won a CES 2026 Innovation Award Honoree + iF Design Award 2026, but has not yet launched — Reolink's own OMVI series landing page (reolink.com/lp/reolink-omvi-series/) states it is 'expected in Q3 2026'. As of last_verified date, reolink.com/product/omvi-x16-poe/ returns 404 (no dedicated product/spec page live yet). Fields not confirmable from an official Reolink source as of this audit (protocols, audio, exact PoE class, dimensions, weight) have been left unconfirmed/absent rather than guessed; re-verify once the official product page goes live.",
+  "ip_rating": "IP66",
+  "features": [
+    "24MP triple-lens flagship",
+    "16MP 180deg panoramic dual-lens + 4K PTZ with 16x optical zoom",
+    "triple-motor structure",
+    "0-22deg motorized tilt (upper lenses)",
+    "360deg endless panning + 95deg PTZ tilt",
+    "Synchronized Smart Tracking",
+    "local AI video search",
+    "no subscription",
+    "iF DESIGN AWARD 2026",
+    "CES 2026 Innovation Award Honoree"
+  ],
+  "sources": [
+    "https://reolink.com/blog/reolink-introduces-triple-lens-omvi-series-and-reolink-x-qualcomm-power-efficient-series-cameras/",
+    "https://reolink.com/lp/reolink-omvi-series/"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "announced",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

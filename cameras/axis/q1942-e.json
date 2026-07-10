@@ -1,0 +1,82 @@
+{
+  "id": "axis-q1942-e",
+  "brand": "Axis",
+  "model": "Q1942-E",
+  "aliases": [
+    "Axis Q1942-E Thermal Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "640x480 thermal"
+  },
+  "sensor": "Thermal VOx LWIR uncooled microbolometer",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "7 / 10 / 13 / 19 / 35 (fixed options)",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "LWIR thermal imaging",
+    "radiometry option for temperature measurement",
+    "AXIS Object Analytics",
+    "intrusion/perimeter detection in complete darkness",
+    "works in smoke/dust",
+    "IK10"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-q1942-e"
+  ],
+  "last_verified": "2026-07-04",
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

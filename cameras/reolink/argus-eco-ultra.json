@@ -1,0 +1,80 @@
+{
+  "id": "reolink-argus-eco-ultra",
+  "brand": "Reolink",
+  "model": "Argus Eco Ultra",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "field_of_view_deg": "105 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Rechargeable battery / solar panel"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K battery camera",
+    "person/vehicle/pet detection",
+    "spotlight + siren",
+    "PIR motion sensor",
+    "time-lapse",
+    "solar compatible",
+    "no subscription"
+  ],
+  "sources": [
+    "https://reolink.com/product/argus-eco-ultra/"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "dimensions_mm": "191 x 75 x 75",
+  "weight_g": 431,
+  "operating_temp_c": "-10 to 55",
+  "lens": {
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "Mainstream",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "last_verified": "2026-07-04"
+}

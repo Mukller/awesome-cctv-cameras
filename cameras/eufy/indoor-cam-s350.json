@@ -1,0 +1,72 @@
+{
+  "id": "eufy-indoor-cam-s350",
+  "brand": "Eufy",
+  "model": "Indoor Cam S350",
+  "aliases": [
+    "T8416121",
+    "Eufy S350 4K Dual-Lens Pan/Tilt Indoor"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD (dual-lens)"
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4K wide + 2K 3x optical tele (8x hybrid zoom)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "130 diagonal (355 pan / 75 tilt)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "power": {
+    "method": "DC 5V (USB-C, hardwired)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP20",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K dual-lens indoor pan/tilt",
+    "8x hybrid zoom (3x optical tele)",
+    "AI auto-tracking",
+    "on-device human/pet/crying detection",
+    "color night vision + IR",
+    "no subscription",
+    "microSD / HomeBase 3 storage",
+    "HomeKit / Alexa / Google"
+  ],
+  "sources": [
+    "https://www.eufy.com/products/t8416121"
+  ],
+  "power_source": [
+    "usb"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "release_notes": "RTSP removed: not confirmed by any official eufy source (eufy 'About NAS/RTSP' article lists only eufyCam 3C/3/E330 Pro; S350 FAQ and product page do not mention RTSP). Community (iSpyConnect) reports /live0 but this is unverified."
+}

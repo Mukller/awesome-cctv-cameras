@@ -1,0 +1,124 @@
+{
+  "id": "abus-ipca54512a",
+  "brand": "ABUS",
+  "model": "IPCA54512A",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "Stream 1",
+        "resolution": "2688 x 1520",
+        "fps": 25
+      },
+      {
+        "name": "Stream 2",
+        "resolution": "640 x 480",
+        "fps": 25
+      },
+      {
+        "name": "Stream 3",
+        "resolution": "1920 x 1080",
+        "fps": 10
+      }
+    ]
+  },
+  "sensor": "1/1.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "110 horizontal / 57 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) or 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WDR 120dB",
+    "Person & vehicle classification",
+    "Color night vision",
+    "Digital zoom",
+    "Privacy zones",
+    "ABUS Link Station app",
+    "ONVIF Profile G/S/T"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "138 x 138 x 130",
+  "weight_g": 800,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "EU",
+    "DE"
+  ],
+  "sources": [
+    "https://www.expert-security.de/abus-ipca54512a-ip-kamera-4mpx-t-n-ir-poe-ip67.html",
+    "https://alarm-technik.eu/en/products/ip-kugeldome-4-mpx-2-8-mm-ir-wl-abus-ipca54512a",
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Spherical-Dome-4-MPx-2.8mm",
+    "https://firstmall.de/ABUS-IPCA54512A-Kugeldome-Kamera-IP-4-MPx-28-mm-IR-WL-PoE-Ueberwachungskamera"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — uses Hikvision-style RTSP paths (Channels/101 main, /102 sub, /103 third). ONVIF/RTSP must be enabled in the camera web UI (Network > Integration Protocol) first. Pattern inferred from sibling IPCB/IPCA models (iSpyConnect, HA community); not individually verified on this exact model."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Use the generic ONVIF integration after enabling ONVIF (Profile S) in the camera web UI. No ABUS-specific HA integration for the Performance Line."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-05"
+}

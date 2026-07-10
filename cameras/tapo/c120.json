@@ -1,0 +1,100 @@
+{
+  "id": "tapo-c120",
+  "brand": "Tapo",
+  "model": "Tapo C120",
+  "type": "dome",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "label": "2K QHD",
+    "max_width": 2560,
+    "max_height": 1440,
+    "megapixels": 3.7
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.17",
+    "aperture": "f/1.65",
+    "varifocal": false
+  },
+  "field_of_view_deg": "120 diagonal, 103 horizontal, 55 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 9
+  },
+  "power": {
+    "method": "5V DC power adapter (USB-A adapter to USB-C camera connector), 100-240V 50/60Hz input, 5.0V/1.0A output"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K QHD indoor/outdoor",
+    "starlight color night vision",
+    "AI person/pet/vehicle detection",
+    "activity zones",
+    "built-in siren",
+    "IP44 all-weather use",
+    "RTSP/ONVIF",
+    "Alexa / Google",
+    "no subscription"
+  ],
+  "sources": [
+    "https://static.tp-link.com/upload/product-overview/2024/202403/20240319/Tapo%20C120%201.0&1.6_Datasheet.pdf",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c120/",
+    "https://www.tapo.com/en/product/smart-camera/tapo-c120/",
+    "https://www.tp-link.com/us/support/faq/2680/",
+    "https://www.tp-link.com/us/press/news/20867/"
+  ],
+  "release_year": 2023,
+  "power_source": [
+    "usb"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+    }
+  },
+  "video": {
+    "codecs": [
+      "h264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/2.9\" Progressive Scan CMOS Starlight Sensor",
+  "operating_temp_c": "-25 to 45",
+  "dimensions_mm": "67.4 x 57.4 x 44.1",
+  "weight_g": 100,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "last_verified": "2026-06-30"
+}

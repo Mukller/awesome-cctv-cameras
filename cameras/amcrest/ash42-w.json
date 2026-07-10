@@ -1,0 +1,78 @@
+{
+  "id": "amcrest-ash42-w",
+  "brand": "Amcrest",
+  "model": "ASH42-W",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "field_of_view_deg": "101 horizontal",
+  "ip_rating": "IP66",
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "2K QHD"
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "DC 5V (USB)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AI person detection",
+    "two-way audio",
+    "privacy mode",
+    "night vision",
+    "Alexa compatible"
+  ],
+  "sources": [
+    "https://www.amazon.com/dp/B08NSY7KT6"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "usb"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    "home_assistant": {
+      "integration": "amcrest",
+      "notes": "Native Amcrest integration or ONVIF. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Amcrest uses Dahua protocol. Also works with 'Amcrest' profile if available."
+    }
+  }
+}

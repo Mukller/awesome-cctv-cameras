@@ -1,0 +1,86 @@
+{
+  "id": "ubiquiti-g6-ptz",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G6 PTZ",
+  "aliases": [
+    "UVC-G6-PTZ"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" 8MP CMOS (wide channel); 1/1.8\" 8MP CMOS (tele channel)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.46 (fixed, wide); 16.3 (fixed, tele)",
+    "aperture": "F1.65 (wide); F2.4 (tele)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "109.9 horizontal / 56.7 vertical / 134.1 diagonal (wide); 26.6 horizontal / 15.1 vertical / 30.4 diagonal (tele)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE+, 42.5-57V DC; 24.5W max"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "dimensions_mm": "107.2 (diameter) x 104.5 x 203.2",
+  "weight_g": 1000,
+  "operating_temp_c": "-30 to 50",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-camera design: separate wide-angle and tele (zoom) sensors/lenses, 10x hybrid zoom -- corrected from a fabricated single-sensor 22x optical / 5-185mm spec and a fabricated 150m IR range",
+    "pan 350 degrees, tilt 100 degrees (not full 360-degree endless pan)",
+    "face recognition, license plate recognition",
+    "auto-tracking",
+    "UniFi Protect ecosystem",
+    "IK04 tamper resistance",
+    "MicroSD card expansion slot",
+    "4K UHD, 30 FPS max"
+  ],
+  "release_year": 2024,
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g6-ptz"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

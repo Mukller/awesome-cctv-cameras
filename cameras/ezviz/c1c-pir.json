@@ -1,0 +1,68 @@
+{
+  "id": "ezviz-c1c-pir",
+  "brand": "EZVIZ",
+  "model": "C1C PIR",
+  "aliases": [
+    "EZVIZ C1C 1080p Indoor PIR Camera Magnetic Base"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2020,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p HD"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "106 horizontal / 130 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 6
+  },
+  "power": {
+    "method": "DC 5V (USB)"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [],
+  "dimensions_mm": "64 x 64 x 103",
+  "weight_g": 98,
+  "operating_temp_c": "-10 to 45",
+  "environment": [
+    "indoor"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "magnetic base (360° positioning)",
+    "PIR passive infrared for accurate detection",
+    "compact indoor camera",
+    "two-way audio",
+    "EZVIZ app / Alexa / Google",
+    "pet/baby monitoring",
+    "no officially confirmed RTSP -- not listed on EZVIZ's ONVIF compatibility FAQ, only community-documented app toggle"
+  ],
+  "sources": [
+    "https://www.ezviz.com/product/c1c-pir/5637"
+  ],
+  "power_source": [
+    "usb"
+  ],
+  "last_verified": "2026-07-01"
+}

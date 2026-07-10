@@ -1,0 +1,111 @@
+{
+  "id": "reolink-rlc-81ma",
+  "brand": "Reolink",
+  "model": "RLC-81MA",
+  "aliases": [
+    "Dual-Lens 4K Fixed Bullet"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.7\" CMOS (x2, wide + telephoto)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (wide) / 8 (tele)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "109-43 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual fixed lens (wide + tele)",
+    "simultaneous dual view",
+    "spotlight color night vision",
+    "person/vehicle detection",
+    "no subscription"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://reolink.com/product/rlc-81ma/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "Φ67 x 187",
+  "weight_g": 460,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "Mainstream (wide lens)",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "Telephoto lens",
+        "resolution": "2304x1296",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}

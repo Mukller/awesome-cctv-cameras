@@ -1,0 +1,107 @@
+{
+  "id": "reolink-fe-p",
+  "brand": "Reolink",
+  "model": "FE-P",
+  "aliases": [
+    "Fisheye PoE Camera"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 6,
+    "max_width": 2560,
+    "max_height": 2560,
+    "label": "6MP"
+  },
+  "sensor": "1/2.5\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.98 (fixed fisheye)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 8
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "360deg fisheye",
+    "multiple dewarping views (fisheye/dual panoramic/quad/cylindrical)",
+    "person detection",
+    "built-in siren",
+    "no subscription"
+  ],
+  "release_year": 2023,
+  "release_notes": "Launched 2023-05-31 as Reolink's first fisheye camera line (FE-P PoE / FE-W WiFi). Indoor use only per official product page (do not install outdoors); no official IP rating is published, so ip_rating has been left unset rather than guessed. Reolink marketed the FE-P as ONVIF-compliant, but per Reolink's own community forum, ONVIF certification applies only to firmware v3.0.0.1987_23041503 or later — earlier firmware may misbehave with third-party ONVIF NVRs.",
+  "sources": [
+    "https://reolink.com/product/fe-p/",
+    "https://reolink.com/blog/reolink-first-ever-fisheye-camera/",
+    "https://support.reolink.com/articles/17723127363993-FAQS-FE-P/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "Φ126 x 49.2",
+  "weight_g": 293,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "Main",
+        "resolution": "2560x2560",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ],
+  "last_verified": "2026-07-04"
+}

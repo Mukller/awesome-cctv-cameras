@@ -1,0 +1,86 @@
+{
+  "id": "axis-q3819-pve",
+  "brand": "Axis",
+  "model": "Q3819-PVE",
+  "aliases": [
+    "Axis Q3819-PVE 4K 180deg Panoramic"
+  ],
+  "release_year": 2024,
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 14,
+    "label": "14MP (4x5MP, 180\u00b0)"
+  },
+  "sensor": "4x 1/2.5\" CMOS",
+  "lens": {
+    "count": 4,
+    "focal_length_mm": "5.9",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "High PoE (802.3bt)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "3-sensor 180deg panoramic",
+    "12MP total 4K per sensor",
+    "Lightfinder 2.0",
+    "Forensic WDR",
+    "OptimizedIR",
+    "AXIS Object Analytics",
+    "Zipstream H.265/H.264",
+    "built-in mic",
+    "IK10"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-q3819-pve"
+  ],
+  "last_verified": "2026-07-04",
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

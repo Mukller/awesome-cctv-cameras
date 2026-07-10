@@ -1,0 +1,91 @@
+{
+  "id": "eufy-video-doorbell-s330",
+  "brand": "Eufy",
+  "model": "Video Doorbell S330",
+  "aliases": [
+    "eufy S330 Dual Wired Doorbell",
+    "E8203111"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "2K front (2560x1920) + 1080p package (1600x1200)"
+  },
+  "lens": {
+    "count": 2,
+    "varifocal": false
+  },
+  "field_of_view_deg": "160 front + 97 package",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "Hardwired only (16-24 VAC, 30 VA or more)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false,
+    "notes": "8 GB built-in (up to 90 days); expandable via HomeBase"
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-camera head-to-toe video doorbell (2K front + package cam)",
+    "AI face / package / human detection",
+    "infrared-enhanced night vision (4 IR sensors)",
+    "no subscription fee",
+    "local HomeBase storage",
+    "Alexa / Google (no HomeKit)",
+    "two-way audio",
+    "IP65"
+  ],
+  "sources": [
+    "https://www.eufy.com/products/e8203111",
+    "https://service.eufy.com/article-description/S330-S300-eufyCam-eufyCam-3-3C-FAQ-Before-You-Buy"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 720,
+        "height": 960,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{ip}:8554/live0",
+      "notes": "RTSP is served via the HomeBase (Camera Settings > General > Storage > RTSP/NAS), not the doorbell directly. Portrait aspect — set detect to 720x960. No ONVIF. Hardwired doorbell.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use eufy_security HACS integration. RTSP available via HomeBase when enabled. Doorbell press exposed as event."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF). Portrait aspect ratio."
+    }
+  }
+}

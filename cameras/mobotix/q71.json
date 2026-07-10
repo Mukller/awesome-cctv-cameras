@@ -1,0 +1,85 @@
+{
+  "id": "mobotix-q71",
+  "brand": "Mobotix",
+  "model": "Q71",
+  "aliases": [
+    "Mx-Q71",
+    "MOBOTIX 7 Q71 Hemispheric"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 4000,
+    "max_height": 3000,
+    "label": "12MP UHD"
+  },
+  "sensor": "1/1.7\" 12MP CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "1.8 (fixed hemispheric)",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 (ceiling) / 180 (wall)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 8
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "mxpeg"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "MOBOTIX 7 platform",
+    "12MP hemispheric 360deg fisheye",
+    "IR + white light dual illumination",
+    "open app platform",
+    "object counting / heatmap",
+    "quad/panoramic/dome dewarping",
+    "H.265 / MxPEG",
+    "IK10"
+  ],
+  "sources": [
+    "https://www.mobotix.com/en/mobotix-7/hemispherical-module"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/mobotix.pro/mxpeg"
+    },
+    "home_assistant": {
+      "integration": "motionEye",
+      "notes": "Use motionEye or generic camera integration with MJPEG."
+    },
+    "blue_iris": {
+      "profile": "Mobotix",
+      "notes": "Select 'Mobotix' profile. Uses MxPEG codec by default; switch to H.264 in camera settings for Blue Iris."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

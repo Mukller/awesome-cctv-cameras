@@ -1,0 +1,79 @@
+{
+  "id": "reolink-argus-2",
+  "brand": "Reolink",
+  "model": "Argus 2",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2019,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p HD"
+  },
+  "field_of_view_deg": "130 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "5200mAh rechargeable battery / solar panel optional"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "original Reolink wire-free battery camera",
+    "1080p removable battery",
+    "starlight IR night vision",
+    "solar optional",
+    "no subscription",
+    "Alexa/Google"
+  ],
+  "sources": [
+    "https://reolink.com/product/argus-2/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "sensor": "Starlight CMOS",
+  "lens": {
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "dimensions_mm": "96 x 58 x 59",
+  "weight_g": 260,
+  "operating_temp_c": "-10 to 55"
+}

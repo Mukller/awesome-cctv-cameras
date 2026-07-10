@@ -1,0 +1,78 @@
+{
+  "id": "dahua-ipc-hfw7842h-z-x",
+  "brand": "Dahua",
+  "model": "IPC-HFW7842H-Z-X",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 8,
+    "label": "4K UHD"
+  },
+  "field_of_view_deg": "106-30h",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80
+  },
+  "power": {
+    "method": "PoE (802.3at)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "WizMind 7 Series 4K varifocal bullet",
+    "2.7-12mm motorized",
+    "80m IR",
+    "HEOP open AI",
+    "face recognition",
+    "multi-target tracking",
+    "H.265",
+    "IP67"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/All-Products/Network-Cameras/WizMind-X-series/8MP/IPC-HFW7842H-Z-X"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "Dual-lens WizMind camera — check whether second lens exposes a separate channel (channel=2)."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  },
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04"
+}

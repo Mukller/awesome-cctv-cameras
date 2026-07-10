@@ -1,0 +1,118 @@
+{
+  "id": "bosch-nbn-73023-ba",
+  "brand": "Bosch",
+  "model": "DINION IP starlight 7000 HD (NBN-73023-BA)",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "M-JPEG"
+    ],
+    "max_fps": 60,
+    "streams": [
+      {
+        "name": "Main H.264",
+        "resolution": "1920x1080",
+        "fps": 60,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch CMOS",
+  "lens": {
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af / 802.3at Type 1) or +12 VDC",
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "features": [
+    "1080p HD up to 60 fps",
+    "Starlight low-light performance (color 0.0069 lx, mono 0.0008 lx)",
+    "High Dynamic Range / Extended Dynamic Range mode (120 dB WDR)",
+    "Built-in Intelligent Video Analytics (IVA)",
+    "Intelligent Dynamic Noise Reduction (IDNR)",
+    "True day/night with mechanical IR-cut filter",
+    "Hybrid IP + analog video output (SMB connector)",
+    "Auto motorized back-focus / lens wizard",
+    "Automatic image rotation (gyro/accelerometer)",
+    "Privacy masking, area-based encoding, edge recording",
+    "CS-mount (C-mount with adapter ring), lens sold separately",
+    "Alarm I/O, audio line in/out, RS-232/422/485",
+    "ONVIF Profile S/G/T/M",
+    "NDAA compliant"
+  ],
+  "operating_temp_c": "-20°C to +50°C",
+  "dimensions_mm": "78 x 66 x 140",
+  "weight_g": 840,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://objects.eanixter.com/PD655351.PDF",
+    "https://commerce.boschsecurity.com/xf/en/DINION-IP-starlight-7000-HD/p/F.01U.314.806/",
+    "https://netcamcenter.de/de/produkte/ip-kameras/nbn-73023-ba",
+    "https://www.surveillance-video.com/camera-nbn-73023-ba.html"
+  ],
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

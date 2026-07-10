@@ -1,0 +1,69 @@
+{
+  "id": "lorex-e893ab",
+  "brand": "Lorex",
+  "model": "E893AB (4K PoE Smart Deterrence Bullet)",
+  "aliases": [
+    "4K IP Wired Bullet Camera Smart Deterrence"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "108 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 45
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "microSD slot present but documented as 'for service use only' on the official spec sheet -- no user-recordable capacity confirmed."
+  },
+  "protocols": [],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "dimensions_mm": "73 x 175 x 70",
+  "weight_g": 490,
+  "operating_temp_c": "-30 to 60",
+  "features": [
+    "4K PoE bullet",
+    "smart deterrence (spotlight + siren)",
+    "dual-light color night vision (up to 45m ambient, 30m total dark)",
+    "smart motion detection (person/vehicle/animal)",
+    "IP67",
+    "NVR compatible",
+    "no monthly fees",
+    "no officially confirmed RTSP/ONVIF -- Lorex help center makes no mention of it for this model; the community Dahua-OEM RTSP path is unofficial"
+  ],
+  "sources": [
+    "https://www.lorextechnology.com/downloads/ip-cameras/E893AB/E893AB_Spec_Sheet_R1.pdf",
+    "https://www.lorex.com/products/4k-ultra-hd-smart-deterrence-ip-camera-with-smart-motion-detection-plus"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-06"
+}

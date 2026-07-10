@@ -1,0 +1,434 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/USERNAME/cctv-camera-database/schema/camera.schema.json",
+  "title": "CCTV Camera",
+  "description": "Schema for a single CCTV / IP camera entry.",
+  "type": "object",
+  "required": [
+    "id",
+    "brand",
+    "model",
+    "type",
+    "resolution"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique slug, e.g. 'reolink-duo-2'.",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Alternate names / SKUs."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "bullet",
+        "dome",
+        "turret",
+        "ptz",
+        "dual-lens",
+        "fisheye",
+        "covert",
+        "box",
+        "panoramic",
+        "floodlight",
+        "doorbell"
+      ]
+    },
+    "connectivity": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "wifi",
+          "ethernet",
+          "4g",
+          "coax"
+        ]
+      },
+      "description": "Network connectivity only \u2014 how the camera sends data."
+    },
+    "power_source": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "poe",
+          "dc",
+          "usb",
+          "battery",
+          "solar",
+          "ac-mains"
+        ]
+      },
+      "description": "How the camera is powered."
+    },
+    "resolution": {
+      "type": "object",
+      "required": [
+        "megapixels"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "megapixels": {
+          "type": "number"
+        },
+        "max_width": {
+          "type": "integer"
+        },
+        "max_height": {
+          "type": "integer"
+        },
+        "label": {
+          "type": "string",
+          "description": "e.g. '4K', '1080p'."
+        }
+      }
+    },
+    "video": {
+      "type": "object",
+      "description": "Stream capabilities — what the camera outputs (codecs, FPS, per-stream specs). This is spec metadata; the RTSP URLs to actually use live under configs.frigate.* (rtsp_url_template, best_substream). Optional and backfilled opportunistically.",
+      "additionalProperties": false,
+      "properties": {
+        "codecs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Supported video codecs, e.g. ['H.265', 'H.264', 'MJPEG']."
+        },
+        "max_fps": {
+          "type": "integer",
+          "description": "Max FPS at highest resolution."
+        },
+        "streams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "e.g. 'main', 'sub', 'third'."
+              },
+              "resolution": {
+                "type": "string",
+                "description": "e.g. '3840x2160'."
+              },
+              "fps": {
+                "type": "integer"
+              },
+              "codec": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "Per-stream capability breakdown (name/resolution/fps/codec) — what each stream outputs. Distinct from configs.frigate.best_substream, which is the RTSP URL to use."
+        }
+      }
+    },
+    "sensor": {
+      "type": "string",
+      "description": "e.g. '1/2.7\" CMOS'."
+    },
+    "lens": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "focal_length_mm": {
+          "type": "string"
+        },
+        "aperture": {
+          "type": "string"
+        },
+        "varifocal": {
+          "type": "boolean"
+        }
+      }
+    },
+    "field_of_view_deg": {
+      "type": "string"
+    },
+    "night_vision": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "ir",
+            "color",
+            "hybrid",
+            "none"
+          ]
+        },
+        "range_m": {
+          "type": "integer"
+        }
+      }
+    },
+    "power": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "consumption_w": {
+          "type": "number"
+        },
+        "voltage": {
+          "type": "string"
+        },
+        "poe_class": {
+          "type": "integer",
+          "enum": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          "description": "PoE class (e.g. 3 for PoE Class 3)."
+        }
+      }
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "onboard": {
+          "type": "boolean"
+        },
+        "max_microsd_gb": {
+          "type": "integer"
+        },
+        "nvr_compatible": {
+          "type": "boolean"
+        },
+        "cloud": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Free-text storage notes, e.g. external hub requirement."
+        }
+      }
+    },
+    "protocols": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "onvif",
+          "rtsp",
+          "rtmp",
+          "http",
+          "p2p",
+          "hdcvi",
+          "mxpeg"
+        ]
+      }
+    },
+    "ip_rating": {
+      "type": "string",
+      "description": "e.g. 'IP66', 'IP67'."
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "microphone": {
+          "type": "boolean"
+        },
+        "speaker": {
+          "type": "boolean"
+        },
+        "two_way": {
+          "type": "boolean"
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "e.g. 'person detection', 'vehicle detection', 'auto-tracking'."
+    },
+    "operating_temp_c": {
+      "type": "string"
+    },
+    "dimensions_mm": {
+      "type": "string"
+    },
+    "weight_g": {
+      "type": "number"
+    },
+    "release_year": {
+      "type": "integer"
+    },
+    "end_of_sale_year": {
+      "type": "integer"
+    },
+    "end_of_support_year": {
+      "type": "integer"
+    },
+    "environment": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["indoor", "outdoor"]
+      },
+      "description": "Indoor and/or outdoor suitability."
+    },
+    "soc": {
+      "type": "string",
+      "description": "System on Chip (SoC), e.g. Ingenic T31 (for Thingino/OpenIPC compatibility)."
+    },
+    "markets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Regions/countries where the camera is sold, e.g. ['EU', 'DE', 'MENA', 'global']."
+    },
+    "generation": {
+      "type": "string",
+      "description": "Product generation/line, e.g. 'Wisenet 9'."
+    },
+    "release_notes": {
+      "type": "string",
+      "description": "Free-text notes about the release (launch events, pending specs, etc.)."
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "Official spec page / datasheet URLs."
+    },
+    "last_verified": {
+      "type": "string",
+      "format": "date",
+      "description": "Date (YYYY-MM-DD) this entry's spec was last checked against its sources[] and confirmed accurate."
+    },
+    "configs": {
+      "type": "object",
+      "description": "Community-contributed integration configs.",
+      "additionalProperties": false,
+      "properties": {
+        "frigate": {
+          "type": "object",
+          "description": "Frigate NVR configuration snippet.",
+          "additionalProperties": false,
+          "properties": {
+            "detect": {
+              "type": "object",
+              "properties": {
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "fps": {
+                  "type": "integer"
+                }
+              }
+            },
+            "rtsp_url_template": {
+              "type": "string",
+              "description": "RTSP URL pattern, e.g. rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main"
+            },
+            "best_substream": {
+              "type": "string",
+              "description": "Recommended sub-stream RTSP URL for Frigate's detect role (the URL to use). Distinct from video.streams[], which describes stream capabilities."
+            },
+            "notes": {
+              "type": "string"
+            },
+            "verified": {
+              "type": "boolean",
+              "description": "Whether this configuration has been verified working with Frigate."
+            },
+            "tested_by": {
+              "type": "string",
+              "description": "The community member or source that verified the config."
+            },
+            "tested_version": {
+              "type": "string",
+              "description": "Frigate version tested (e.g. '0.14')."
+            },
+            "recommended_stream_type": {
+              "type": "string",
+              "enum": ["go2rtc", "ffmpeg", "rtsp"],
+              "description": "Recommended stream input type (e.g. go2rtc for WebRTC/audio, ffmpeg for scaling, native rtsp)."
+            }
+          }
+        },
+        "home_assistant": {
+          "type": "object",
+          "description": "Home Assistant integration notes.",
+          "properties": {
+            "integration": {
+              "type": "string",
+              "description": "e.g. 'onvif', 'reolink', 'frigate'"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "connection_type": {
+              "type": "string",
+              "enum": ["local", "local_push", "local_poll", "cloud", "cloud_push", "cloud_poll"],
+              "description": "Integration connectivity type."
+            },
+            "doorbell_button": {
+              "type": "boolean",
+              "description": "Whether the doorbell button press event is exposed."
+            },
+            "two_way_audio": {
+              "type": "boolean",
+              "description": "Whether two-way audio is supported in Home Assistant."
+            },
+            "onvif_events": {
+              "type": "boolean",
+              "description": "Whether ONVIF motion or other events are supported."
+            }
+          }
+        },
+        "blue_iris": {
+          "type": "object",
+          "description": "Blue Iris configuration notes.",
+          "properties": {
+            "profile": {
+              "type": "string",
+              "description": "Camera type profile in Blue Iris."
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "announced",
+        "discontinued"
+      ],
+      "description": "Product availability status."
+    }
+  }
+}

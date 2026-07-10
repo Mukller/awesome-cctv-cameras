@@ -1,0 +1,96 @@
+{
+  "id": "reolink-d400",
+  "brand": "Reolink",
+  "model": "D400",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2020,
+  "resolution": {
+    "megapixels": 4,
+    "label": "4MP"
+  },
+  "field_of_view_deg": "80 horizontal / 42 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 8
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Reolink add-on PoE dome 4MP for NVR expansion",
+    "30m IR",
+    "IP66",
+    "NVR-only — no standalone ONVIF/RTSP (confirmed via Reolink FAQ)",
+    "no subscription"
+  ],
+  "sources": [
+    "https://reolink.com/product/d400/",
+    "https://reolink.com/files/docs/specs/D400-IP-Camera-Specifications.pdf",
+    "https://support.reolink.com/hc/en-us/articles/10618780626073-FAQs-D400-B400/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "notes": "D400 has no standalone RTSP/ONVIF service — it is an add-on camera that only works through a Reolink PoE NVR (e.g. RLN8-410, RLN16-410). Pull this camera's channel from the NVR's own RTSP stream instead of connecting to the camera's IP directly."
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Not directly discoverable — the camera has no local ONVIF/HTTP API. Add the parent Reolink NVR to the Reolink HA integration instead; this camera's channel is exposed through the NVR."
+    },
+    "blue_iris": {
+      "notes": "Cannot be added directly (no local ONVIF/RTSP). Add the parent Reolink NVR as the video source and pull this camera's channel from the NVR."
+    }
+  },
+  "sensor": "1/3\" CMOS",
+  "dimensions_mm": "Φ120 x 77",
+  "weight_g": 480,
+  "operating_temp_c": "-10 to 55",
+  "lens": {
+    "focal_length_mm": "4.0",
+    "aperture": "F2.0",
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "Main Stream",
+        "resolution": "2560x1440",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "Sub Stream",
+        "resolution": "640x360",
+        "fps": 7,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

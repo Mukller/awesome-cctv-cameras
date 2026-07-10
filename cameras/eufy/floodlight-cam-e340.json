@@ -1,0 +1,69 @@
+{
+  "id": "eufy-floodlight-cam-e340",
+  "brand": "Eufy",
+  "model": "Floodlight Cam E340",
+  "aliases": [
+    "Eufy E340 Dual 3K Floodlight"
+  ],
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 6,
+    "label": "Dual-lens: 3K wide-angle + telephoto (3x optical / 8x hybrid zoom)"
+  },
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "Wide-angle + telephoto (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "130 wide lens; 360 pan / 70 tilt",
+  "night_vision": {
+    "type": "color",
+    "range_m": 15
+  },
+  "power": {
+    "method": "Hardwired (AC mains)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false,
+    "cloud": false,
+    "notes": "microSD up to 128 GB, or continuous recording via HomeBase S380 (up to 16 TB)."
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual 3MP cameras + 2000-lumen floodlight",
+    "motorised pan/tilt",
+    "color night vision",
+    "AI person/vehicle detection",
+    "3x optical / 8x hybrid zoom",
+    "dual-band Wi-Fi 6",
+    "24/7 recording on HomeBase S380",
+    "no subscription fee",
+    "Alexa / Google Assistant",
+    "IP65"
+  ],
+  "sources": [
+    "https://www.eufy.com/floodlight-cam-e340"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04"
+}

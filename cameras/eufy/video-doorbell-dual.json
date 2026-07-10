@@ -1,0 +1,75 @@
+{
+  "id": "eufy-video-doorbell-dual",
+  "brand": "Eufy",
+  "model": "Video Doorbell Dual (E8213)",
+  "aliases": [
+    "T8213",
+    "eufy Video Doorbell Dual 2K"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "2K (dual)"
+  },
+  "lens": {
+    "count": 2,
+    "varifocal": false
+  },
+  "field_of_view_deg": "front + downward package view",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "Built-in rechargeable battery (6 months) / hardwired 16-24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false,
+    "notes": "16 GB stored on included HomeBase"
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-lens (door + downward package view)",
+    "AI person detection",
+    "package detection",
+    "no subscription fee",
+    "local HomeBase storage",
+    "Alexa / Google integration"
+  ],
+  "release_year": 2022,
+  "sources": [
+    "https://www.eufy.com/products/e8213181",
+    "https://service.eufy.com/article-description/Does-the-Video-Doorbell-Dual-Wired-support-RTSP"
+  ],
+  "power_source": [
+    "battery",
+    "ac-mains"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use the eufy_security HACS integration (P2P live stream). Doorbell press exposed as event. No native RTSP/ONVIF — eufy confirms the Video Doorbell Dual does not support RTSP."
+    }
+  }
+}

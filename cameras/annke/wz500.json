@@ -1,0 +1,90 @@
+{
+  "id": "annke-wz500",
+  "brand": "Annke",
+  "model": "WZ500",
+  "aliases": [
+    "5MP 20x Zoom WiFi PTZ",
+    "I51CK"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2592,
+    "max_height": 1944,
+    "label": "5MP"
+  },
+  "sensor": "1/2.8\" Sony CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-94mm (20x optical zoom)",
+    "varifocal": true
+  },
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 100
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP WiFi PTZ with 20x optical zoom",
+    "2.4GHz WiFi",
+    "auto-tracking of moving objects",
+    "100m IR / 50m full-color night vision (dual light)",
+    "350° pan / 90° tilt",
+    "preset cruise and patrol",
+    "two-way audio",
+    "H.265",
+    "IP66"
+  ],
+  "sources": [
+    "https://www.annke.com/products/wz500"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "WiFi PTZ (Tuya-based, internal model I51CK), not a Hikvision OEM. Use ONVIF auto-discovery; the Hikvision /Streaming/Channels RTSP path may not apply — confirm the RTSP path via ONVIF."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "WiFi PTZ; add via the ONVIF integration. Not Hikvision protocol (Tuya-based)."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Add as an ONVIF/RTSP camera. This is a WiFi (Tuya-based) PTZ, not a Hikvision-protocol camera."
+    }
+  }
+}

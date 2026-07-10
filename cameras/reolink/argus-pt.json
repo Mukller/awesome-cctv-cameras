@@ -1,0 +1,79 @@
+{
+  "id": "reolink-argus-pt",
+  "brand": "Reolink",
+  "model": "Argus PT",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1616,
+    "label": "5MP (2K+)"
+  },
+  "field_of_view_deg": "355 pan/140 tilt",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Rechargeable battery / solar optional"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "p2p"
+  ],
+  "ip_rating": "IP64",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "5MP (2K+) battery pan/tilt",
+    "355° pan / 140° tilt",
+    "2.4GHz/5GHz dual-band WiFi",
+    "person/vehicle detection",
+    "solar optional",
+    "no subscription"
+  ],
+  "sources": [
+    "https://reolink.com/product/argus-pt/"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2880x1616",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "Φ98 x 122",
+  "weight_g": 477,
+  "operating_temp_c": "-10 to 55",
+  "last_verified": "2026-07-04"
+}

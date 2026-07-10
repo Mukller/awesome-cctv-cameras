@@ -1,0 +1,86 @@
+{
+  "id": "axis-q1952-e",
+  "brand": "Axis",
+  "model": "Q1952-E",
+  "aliases": [
+    "Axis Q1952-E Thermal Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 0.3,
+    "max_width": 640,
+    "max_height": 480,
+    "label": "640x480 thermal"
+  },
+  "sensor": "Uncooled microbolometer",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "10 (fixed)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "61 horizontal",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "thermal imaging 640x480",
+    "AXIS Object Analytics",
+    "Zipstream H.265",
+    "Axis Edge Vault",
+    "perimeter protection",
+    "temperature anomaly detection",
+    "IP66/IK10",
+    "outdoor-ready"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-q1952-e"
+  ],
+  "last_verified": "2026-07-04",
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

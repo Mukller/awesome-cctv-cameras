@@ -1,0 +1,65 @@
+{
+  "id": "ezviz-h3c-2k",
+  "brand": "EZVIZ",
+  "model": "H3c 2K",
+  "aliases": [
+    "EZVIZ H3c 2K Outdoor Fixed Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP (2K)"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "82 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V/1A"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "dimensions_mm": "72 x 72 x 157",
+  "weight_g": 330,
+  "operating_temp_c": "-30 to 50",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "outdoor fixed-lens bullet camera",
+    "IR night vision up to 30m",
+    "IP67 weatherproof",
+    "no officially confirmed RTSP/ONVIF -- official datasheet lists only 'EZVIZ Cloud Proprietary Protocol'",
+    "EZVIZ app / Alexa / Google"
+  ],
+  "sources": [
+    "https://www.ezviz.com/product/h3c+2k/44668",
+    "https://www.ezviz.com/product/h3c/42661"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "last_verified": "2026-07-01"
+}

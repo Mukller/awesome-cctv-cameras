@@ -1,0 +1,107 @@
+{
+  "id": "tapo-d225",
+  "brand": "Tapo",
+  "model": "D225",
+  "aliases": [
+    "2K QHD Smart Video Doorbell"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "label": "2K QHD",
+    "max_width": 2304,
+    "max_height": 1728,
+    "megapixels": 4
+  },
+  "lens": {
+    "focal_length_mm": "1.18",
+    "aperture": "f/1.8",
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "170.6 horizontal / 140.1 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "power": {
+    "method": "10,000mAh built-in rechargeable Li-ion battery, or hardwired via included adapter (100-240V 50/60Hz input, 5.0V/2.0A output) with jumper-enabled always-on mode"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "nvr_compatible": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K QHD video doorbell with chime included",
+    "wide 180deg head-to-toe view",
+    "AI person/pet/vehicle detection",
+    "color night vision",
+    "two-way audio",
+    "instant notifications",
+    "Alexa / Google",
+    "no subscription"
+  ],
+  "sources": [
+    "https://www.tapo.com/us/product/smart-camera/tapo-d225/",
+    "https://www.tp-link.com/us/smart-home/smart-doorbell/tapo-d225/",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-d225/",
+    "https://www.tapo.com/us/faq/724/",
+    "https://www.tp-link.com/us/press/news/21292/"
+  ],
+  "power_source": [
+    "battery",
+    "ac-mains"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 720,
+        "height": 960,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2",
+      "notes": "RTSP only available when hardwired with Always-On mode enabled in Tapo app (Advanced Settings > Always-On). On battery power RTSP is disabled. Portrait aspect ratio — set detect to 720x960."
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Doorbell press exposed as event. RTSP requires Always-On mode (hardwired only) — on battery, only cloud/app access works."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Requires Always-On mode (hardwired only)."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1728",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "150 x 50 x 38.4",
+  "last_verified": "2026-06-30"
+}

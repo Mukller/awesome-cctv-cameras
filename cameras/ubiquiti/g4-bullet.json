@@ -1,0 +1,83 @@
+{
+  "id": "ubiquiti-g4-bullet",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G4 Bullet",
+  "aliases": [
+    "UVC-G4-Bullet"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1512,
+    "label": "2K"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "86 horizontal / 60 vertical / 111 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 9
+  },
+  "power": {
+    "method": "PoE; 4W max"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IPX4",
+  "dimensions_mm": "75 (diameter) x 140",
+  "weight_g": 520,
+  "operating_temp_c": "-20 to 40",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "AI event detection person/vehicle/animal",
+    "UniFi Protect ecosystem",
+    "IK04",
+    "built-in mic",
+    "lens focal length (3.6mm) not confirmed on current official techspecs page -- lists 'Fixed focal length' with no mm value; retained from prior verification pending re-check"
+  ],
+  "release_year": 2021,
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g4-bullet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

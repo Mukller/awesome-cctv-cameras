@@ -1,0 +1,67 @@
+{
+  "id": "wyze-video-doorbell-v2",
+  "brand": "Wyze",
+  "model": "Video Doorbell v2",
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "Fixed",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "150 diagonal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 6
+  },
+  "power": {
+    "method": "Hardwired (existing doorbell wiring 16-24V AC)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 32,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K wired video doorbell",
+    "head-to-toe view",
+    "person/package detection",
+    "no subscription required for basic",
+    "built-in chime",
+    "Alexa / Google Home"
+  ],
+  "sources": [
+    "https://www.wyze.com/products/wyze-video-doorbell-v2"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "wyze",
+      "notes": "No official RTSP or ONVIF support. Wyze doorbells are cloud/app-only by default. For local RTSP, use docker-wyze-bridge (https://github.com/mrlt8/docker-wyze-bridge) which proxies the P2P stream to a local RTSP endpoint. Not compatible with Frigate or Blue Iris without the bridge."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

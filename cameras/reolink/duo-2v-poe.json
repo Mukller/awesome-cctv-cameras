@@ -1,0 +1,106 @@
+{
+  "id": "reolink-duo-2v-poe",
+  "brand": "Reolink",
+  "model": "Duo 2V PoE",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 5120,
+    "max_height": 1552,
+    "label": "4K UHD"
+  },
+  "sensor": "Dual 1/2.65\" CMOS",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 57 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "180deg dual-lens panoramic",
+    "IK10 vandal resistant (IK10)",
+    "spotlight color night vision",
+    "no subscription"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://reolink.com/product/reolink-duo-2v-poe/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "Φ137 x 98.5",
+  "weight_g": 664,
+  "operating_temp_c": "-15 to 45",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "5120x1552",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "640x192",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

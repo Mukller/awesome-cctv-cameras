@@ -1,0 +1,119 @@
+{
+  "id": "reolink-omvi-3i-poe",
+  "brand": "Reolink",
+  "model": "OMVI 3i PoE",
+  "aliases": [
+    "Triple-Lens 18MP PoE"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 18,
+    "label": "18MP (10MP panoramic + 8MP PT)"
+  },
+  "sensor": "3x CMOS: 2x 1/2.7\" 5MP (panoramic) + 1x 1/2.8\" 8MP (PT, 4K)",
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "2.8mm (panoramic) + 6mm (PT)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 H / 65 V (panoramic) + 55 H / 30 V (PT); PT unit pans 350deg / tilts 50deg",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (802.3at/PoE+, 48V, active) / DC 12V, 2A backup, <24W",
+    "consumption_w": 24,
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "triple-lens 18MP",
+    "180deg panoramic + 4K auto-tracking PT",
+    "synchronized smart tracking",
+    "AI video search",
+    "perimeter protection",
+    "color & IR night vision",
+    "no subscription"
+  ],
+  "release_year": 2026,
+  "status": "available",
+  "sources": [
+    "https://reolink.com/product/omvi-3i-poe/",
+    "https://reolink.com/de/product/omvi-3i-poe/",
+    "https://support.reolink.com/articles/58080032485401-FAQs-Reolink-OMVI-3i-PoE/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration (Reolink API over HTTP/RTSP). ONVIF support is not listed on Reolink's official spec page or FAQ for this model, so ONVIF auto-discovery is not confirmed — use the Reolink integration's IP/username/password setup instead."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "202 x 151 x 125",
+  "weight_g": 1300,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "Panoramic (upper)",
+        "resolution": "5120x1920",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "PT (lower)",
+        "resolution": "3840x2160",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}

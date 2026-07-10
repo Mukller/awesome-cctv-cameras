@@ -1,0 +1,104 @@
+{
+  "id": "reolink-e1-pro",
+  "brand": "Reolink",
+  "model": "E1 Pro",
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "release_year": 2020,
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1616,
+    "label": "5MP Super HD"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F1.6"
+  },
+  "field_of_view_deg": "82 horizontal/43 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 12
+  },
+  "power": {
+    "method": "DC 5V/1A"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "355° pan / 50° tilt",
+    "64 presets",
+    "human/pet detection",
+    "crying detection",
+    "auto-tracking",
+    "dual-band WiFi",
+    "no subscription"
+  ],
+  "sources": [
+    "https://reolink.com/product/e1-pro/",
+    "https://home-cdn.reolink.us/files/docs/specs/E1-Pro-IP-Camera-Specification.pdf"
+  ],
+  "last_verified": "2026-07-04",
+  "release_notes": "Field of view (82° horizontal / 43° vertical) sourced from Reolink's official E1 Pro datasheet PDF, which describes an earlier hardware revision (4MP, F2.4 lens, 256GB max microSD) than the unit currently sold on reolink.com/product/e1-pro/ (5MP, F1.6 lens, 512GB max microSD). Focal length and sensor size are unchanged between revisions, so FOV is assumed to carry over; all other specs in this entry reflect the current live product page.",
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "Φ84 x 118",
+  "weight_g": 235,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "Main/Clear",
+        "resolution": "2880x1616",
+        "fps": 20
+      },
+      {
+        "name": "Sub/Fluent",
+        "resolution": "640x360",
+        "fps": 10
+      }
+    ]
+  },
+  "environment": [
+    "indoor"
+  ]
+}

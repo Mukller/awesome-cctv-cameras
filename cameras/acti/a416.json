@@ -1,0 +1,89 @@
+{
+  "id": "acti-a416",
+  "brand": "ACTi",
+  "model": "A416",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "4MP"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.7-13.5 (zoom, 5x optical)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "104 - 29 horizontal / 55 - 17 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 85
+  },
+  "power": {
+    "method": "DC 12V / High PoE (IEEE 802.3at); 14.5 W (DC), 18 W (PoE)"
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP68",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": true
+  },
+  "dimensions_mm": "297.1 x 96.2 x 91.5",
+  "weight_g": 1272,
+  "operating_temp_c": "-30 to 60",
+  "environment": [
+    "outdoor"
+  ],
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 30
+  },
+  "features": [
+    "zoom lens: 5x optical zoom",
+    "Extreme WDR (150 dB)",
+    "built-in analytics: Tampering Detection, Face Detection, Object Line Crossing Detection, Object Enter Area Detection",
+    "audio: 2-way, Line-in, Mic-in, Line-out (no built-in mic/speaker)",
+    "ONVIF Compliant: Profile S, Profile G, Profile T, Profile M",
+    "real-time clock: Yes",
+    "NEMA 4X, Taiwan IoT Cybersecurity Certification Level 1 (TAICS, TCA)"
+  ],
+  "sources": [
+    "https://www.acti.com/product/A416?tab=specifications"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-03",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:7070/stream1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. RTSP port is 7070 by default."
+    },
+    "blue_iris": {
+      "profile": "ACTi",
+      "notes": "Select 'ACTi' profile. Default RTSP port is 7070."
+    }
+  }
+}

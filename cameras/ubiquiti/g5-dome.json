@@ -1,0 +1,81 @@
+{
+  "id": "ubiquiti-g5-dome",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G5 Dome",
+  "aliases": [
+    "UVC-G5-Dome"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2688,
+    "max_height": 1520,
+    "label": "2K/4MP"
+  },
+  "sensor": "5MP CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "102.4 horizontal / 54.9 vertical / 120.6 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 9
+  },
+  "power": {
+    "method": "PoE, 37-57V DC; 5W max"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IPX4",
+  "dimensions_mm": "109.2 (diameter) x 64.5",
+  "weight_g": 370,
+  "operating_temp_c": "-20 to 40",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "AI event detection person/vehicle/animal",
+    "UniFi Protect ecosystem",
+    "IK08 vandal-resistant",
+    "hard-coated dome cover",
+    "IPX4 rated \"while covered\" by the dome housing per official spec sheet"
+  ],
+  "release_year": 2024,
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g5-dome"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

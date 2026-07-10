@@ -1,0 +1,85 @@
+{
+  "id": "eufy-eufycam-2c",
+  "brand": "Eufy",
+  "model": "EufyCam 2C",
+  "aliases": [
+    "T81131D2",
+    "EufyCam 2C 1080p"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2020,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p HD"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "135 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 8
+  },
+  "power": {
+    "method": "Rechargeable battery (HomeBase 2 required)"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "1080p compact design",
+    "180-day battery life",
+    "human detection AI",
+    "no subscription required",
+    "HomeBase local storage",
+    "Alexa / Google Assistant"
+  ],
+  "sources": [
+    "https://www.eufy.com/products/eufycam-2c"
+  ],
+  "power_source": [
+    "battery"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{homebase_ip}:554/live0",
+      "notes": "RTSP is served by HomeBase 2/3 (not the camera IP) and must be enabled per-camera in the Eufy Security app (Settings > Storage > NAS/RTSP). Official: eufyCam 2C is on Eufy's RTSP-supported list.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera; stream comes from HomeBase."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app; stream comes from HomeBase IP."
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "axis-m3048-p",
+  "brand": "Axis",
+  "model": "M3048-P",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2017,
+  "resolution": {
+    "megapixels": 12,
+    "max_width": 2880,
+    "max_height": 2880,
+    "label": "12MP"
+  },
+  "lens": {
+    "count": 1
+  },
+  "field_of_view_deg": "360",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP42",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "180\u00b0 corridor cover",
+    "IP42",
+    "no IR",
+    "AXIS Video Analytics"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-m3048-p"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "status": "discontinued",
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

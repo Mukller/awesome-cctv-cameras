@@ -1,0 +1,93 @@
+{
+  "id": "axis-q6135-le",
+  "brand": "Axis",
+  "model": "Q6135-LE",
+  "aliases": [
+    "01959-004"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-137.6 (motorized varifocal)",
+    "aperture": "F1.4-F4.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "58.3-2.4 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 250
+  },
+  "power": {
+    "method": "High PoE (802.3bt)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "32x optical zoom",
+    "12x digital zoom",
+    "Lightfinder 2.0",
+    "OptimizedIR (250m)",
+    "Autotracking 2",
+    "orientation aid",
+    "Sharpdome (20deg above horizon)",
+    "AXIS Object Analytics",
+    "TPM FIPS 140-2 level 2",
+    "Zipstream H.264 / H.265",
+    "speed dry",
+    "signed firmware / secure boot",
+    "IK08"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-q6135-le",
+    "https://www.axis.com/dam/public/f4/63/1e/datasheet-axis-q6135-le-ptz-network-camera-en-US-359726.pdf"
+  ],
+  "last_verified": "2026-07-04",
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

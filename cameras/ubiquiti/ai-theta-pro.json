@@ -1,0 +1,79 @@
+{
+  "id": "ubiquiti-ai-theta-pro",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect AI Theta Pro",
+  "aliases": [
+    "UVC-AI-Theta-Pro",
+    "Theta Pro Panoramic"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2160,
+    "max_height": 2160,
+    "label": "4MP (1:1)"
+  },
+  "sensor": "1/1.8\" 8MP CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 180 vertical / 180 diagonal",
+  "power": {
+    "method": "PoE; 12.5W max"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "operating_temp_c": "-20 to 40",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "single-sensor hub + separate 180-degree fisheye lens module design -- NOT a true 360-degree or 4-sensor 24MP multisensor camera as previously stored; that spec was fabricated",
+    "modular: UVC-AI-Theta-Hub processing unit + UVC-AI-Theta-ProLens360 lens module, connected by cable; weights: Hub 330g, Hub mount 35g, ProLens360 58g, flush mount 24g",
+    "24 FPS max",
+    "AI deep learning analytics",
+    "UniFi Protect ecosystem",
+    "face/license plate detection",
+    "no IR night-vision range confirmed on official spec sheet -- no IR Night Vision row present",
+    "no IP rating confirmed on official spec sheet -- not listed"
+  ],
+  "release_year": 2024,
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-ai-theta-pro",
+    "https://store.ui.com/us/en/products/uvc-ai-theta-pro"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

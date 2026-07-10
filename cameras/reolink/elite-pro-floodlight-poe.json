@@ -1,0 +1,106 @@
+{
+  "id": "reolink-elite-pro-floodlight-poe",
+  "brand": "Reolink",
+  "model": "Elite Pro Floodlight PoE",
+  "type": "dual-lens",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 16,
+    "label": "16MP dual-lens"
+  },
+  "sensor": "Dual 1/2.7\" CMOS (8MP each)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 fixed",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal, 55 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at, 48V Active) — no DC power option",
+    "poe_class": 4
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "16MP dual-lens 180deg panoramic",
+    "2800-lumen floodlight (17W, 3000K-6500K)",
+    "105dB siren",
+    "ReoNeura local AI video search",
+    "motion track",
+    "color + IR night vision (30m, auto-switching IR-cut)",
+    "person/vehicle/animal detection",
+    "Google Assistant compatible",
+    "no subscription"
+  ],
+  "release_year": 2026,
+  "sources": [
+    "https://reolink.com/product/elite-pro-floodlight-poe/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration uses Reolink's HTTP/CGI API. Official spec sheet does not list ONVIF support for this PoE model (unlike the Elite Floodlight WiFi/TrackFlex siblings), so ONVIF-based discovery/events are unconfirmed."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile with RTSP path /h264Preview_01_main. ONVIF is not confirmed on this model's official spec sheet, so a Generic/ONVIF fallback profile may not work."
+    }
+  },
+  "dimensions_mm": "174 x 184 x 295",
+  "weight_g": 1300,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "Main",
+        "resolution": "7680x2160",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

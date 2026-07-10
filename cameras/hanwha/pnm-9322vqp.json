@@ -1,0 +1,109 @@
+{
+  "id": "hanwha-pnm-9322vqp",
+  "brand": "Hanwha",
+  "model": "PNM-9322VQP",
+  "aliases": [
+    "Wisenet P 10-22MP Multi-directional + 2MP PTZ Camera"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 22,
+    "max_width": 2560,
+    "max_height": 1920,
+    "label": "10-22MP total (4x 2MP/5MP modules + 2MP PTZ)"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ],
+    "max_fps": 60
+  },
+  "sensor": "4x exchangeable CMOS lens modules (2MP/5MP) + 1/2.8\" CMOS (PTZ channel)",
+  "lens": {
+    "count": 5,
+    "focal_length_mm": "PTZ: 4.44-142.6 (32x optical); modules: 2.4/2.8/3.6/6.0/12.0 (2MP) or 3.7/4.6/7.0 (5MP) fixed",
+    "aperture": "PTZ: F1.6 (wide) - F4.4 (tele); modules: F2.0",
+    "varifocal": true
+  },
+  "field_of_view_deg": "PTZ: 61.8 (wide) - 2.19 (tele) horizontal; modules: per lens option",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "HPoE (IEEE 802.3bt, Class 8), injector included",
+    "consumption_w": 65,
+    "poe_class": 8
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false,
+    "notes": "5 microSD/SDHC/SDXC slots (one per channel), up to 256GB each"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "pan/tilt/zoom",
+    "multi-directional + PTZ combo (5 channels, single IP)",
+    "4x exchangeable 2MP/5MP modules + 2MP 32x PTZ",
+    "PTZ auto-tracking",
+    "SmartZoom to preset / IVA trigger",
+    "analytics (face detection, loitering, directional, fog, virtual line, enter/exit)",
+    "WDR 150dB (2MP modules) / 120dB (5MP modules)",
+    "WiseStream II",
+    "audio line in/out (PTZ channel only)",
+    "IP66/IK10"
+  ],
+  "operating_temp_c": "-40 to 55",
+  "dimensions_mm": "Ø367.8 x 335.7",
+  "weight_g": 7050,
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "release_notes": "Specs per official Hanwha datasheet (DataSheet_PNM-9322VQP, rev 12-2020). No IR illumination; audio is line in/out on the PTZ channel only (no built-in mic/speaker).",
+  "sources": [
+    "https://hanwhavision.eu/product/pnm-9322vqp/",
+    "https://www.a1securitycameras.com/content/product_documents/55945/Hanwha-Techwin-(Samsung)-PNM-9322VQP-Datasheet-A1.pdf"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/profile1/media.smp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/profile2/media.smp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Samsung/Hanwha",
+      "notes": "Select 'Samsung' or 'Hanwha' profile depending on Blue Iris version."
+    }
+  }
+}

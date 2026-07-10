@@ -1,0 +1,101 @@
+{
+  "id": "abus-ipcs74511a",
+  "brand": "ABUS",
+  "model": "IPCS74511A",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4
+  },
+  "video": {
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688x1520",
+        "fps": 25
+      }
+    ]
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "101 horizontal",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "PoE"
+  },
+  "storage": {
+    "onboard": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "features": [
+    "HDMI output (V1.4, max 1080p60)",
+    "120 dB WDR",
+    "IK10 vandal-resistant",
+    "AI person and vehicle detection",
+    "people counting with threshold evaluation",
+    "alarm switching input/output",
+    "audio in/out",
+    "microSD recording"
+  ],
+  "release_year": 2025,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "DE",
+    "EU"
+  ],
+  "sources": [
+    "https://alarm-technik.eu/en/products/abus-ip-dome-4mpx-2-8mm-mit-hdmi-port-ipcs74511a",
+    "https://alarm-technik.eu/cdn/shop/files/Abus-IPCS74511A_BDA.pdf",
+    "https://www.expert-security.de/abus-ip-kameras.html",
+    "https://firstmall.de/abus-ip-dome-4mpx-2-8mm-hdmi-poe-ueberwachungskamera",
+    "https://www.manualslib.com/manual/4025987/Abus-Ipcs74511a.html",
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Dome-4MPx-2.8mm-with-HDMI-port"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-05"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "wyze-cam-v3-pro",
+  "brand": "Wyze",
+  "model": "Cam v3 Pro",
+  "aliases": [
+    "WYZEC3P"
+  ],
+  "type": "box",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "2K QHD"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "122 diagonal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 9
+  },
+  "power": {
+    "method": "USB-A power adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K QHD",
+    "built-in spotlight",
+    "on-device Edge AI detection",
+    "person/package/pet/vehicle",
+    "24/7 recording (microSD)",
+    "built-in siren",
+    "Alexa / Google Home",
+    "RTSP"
+  ],
+  "sources": [
+    "https://www.wyze.com/products/wyze-cam-pro"
+  ],
+  "power_source": [
+    "usb"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/live"
+    },
+    "home_assistant": {
+      "integration": "wyze",
+      "notes": "Use wyze_bridge HACS integration for RTSP. Official Wyze firmware does not support RTSP; flash wz_mini_hacks or use Docker bridge."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile. Requires wz_mini_hacks firmware or wyze-bridge Docker container for RTSP."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

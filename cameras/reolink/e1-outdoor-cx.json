@@ -1,0 +1,104 @@
+{
+  "id": "reolink-e1-outdoor-cx",
+  "brand": "Reolink",
+  "model": "E1 Outdoor CX",
+  "type": "ptz",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 4,
+    "label": "2K",
+    "max_width": 2560,
+    "max_height": 1440
+  },
+  "field_of_view_deg": "89 horizontal/46 vertical",
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "2K ColorX WiFi outdoor F1.0 1/1.8\" sensor",
+    "true color night vision no IR",
+    "person/vehicle/animal AI",
+    "auto-tracking",
+    "ONVIF/RTSP",
+    "IP65",
+    "Alexa/Google",
+    "no subscription"
+  ],
+  "sources": [
+    "https://reolink.com/product/e1-outdoor-cx/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "sensor": "1/1.8\" CMOS",
+  "dimensions_mm": "Φ90 x 120",
+  "weight_g": 446,
+  "operating_temp_c": "-10 to 55",
+  "lens": {
+    "focal_length_mm": "4.0",
+    "aperture": "F1.0",
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "Main stream",
+        "resolution": "2560x1440",
+        "fps": 20,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}

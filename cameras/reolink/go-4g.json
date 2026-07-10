@@ -1,0 +1,86 @@
+{
+  "id": "reolink-go-4g",
+  "brand": "Reolink",
+  "model": "Go",
+  "type": "bullet",
+  "connectivity": [
+    "4g"
+  ],
+  "release_year": 2019,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p HD"
+  },
+  "field_of_view_deg": "110 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "7800mAh rechargeable battery / solar optional / 5V-2A DC adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "p2p"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4G LTE cellular no WiFi / no mains",
+    "1080p",
+    "solar optional",
+    "two-way audio",
+    "farms/forests/remote sites",
+    "no subscription",
+    "IP65",
+    "cloud/P2P app only — no local ONVIF/RTSP/NVR streaming"
+  ],
+  "sources": [
+    "https://reolink.com/product/reolink-go/",
+    "https://cdn.reolink.com/files/docs/specs/Reolink-Go-IP-Camera-Specifications.pdf",
+    "https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "battery",
+    "solar",
+    "dc"
+  ],
+  "sensor": "Starlight CMOS Image Sensor",
+  "dimensions_mm": "Φ75 x 113",
+  "weight_g": 380,
+  "operating_temp_c": "-10 to 55",
+  "lens": {
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}

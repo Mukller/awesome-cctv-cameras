@@ -1,0 +1,66 @@
+{
+  "id": "lorex-e841cd",
+  "brand": "Lorex",
+  "model": "E841CD",
+  "aliases": [
+    "4K IP Dome with Color Night Vision",
+    "E841CD-A12-A Series"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 40
+  },
+  "power": {
+    "method": "PoE (802.3af) or DC 12V"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "dimensions_mm": "101 (diameter) x 83",
+  "weight_g": 360,
+  "features": [
+    "4K PoE dome",
+    "color night vision (up to 40m ambient, 27m total dark)",
+    "person and vehicle detection",
+    "smart motion detection",
+    "H.265",
+    "no officially confirmed RTSP/ONVIF -- Lorex help center makes no mention of it for this model; the community Dahua-OEM RTSP path is unofficial"
+  ],
+  "sources": [
+    "https://www.lorextechnology.com/downloads/security-cameras/E841CD/E841CD_Spec_Sheet_R1.pdf",
+    "https://www.lorex.com/blogs/products/e841cd-a12-a-series"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "last_verified": "2026-07-06"
+}

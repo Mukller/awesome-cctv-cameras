@@ -1,0 +1,94 @@
+{
+  "id": "dahua-sd49225xa-hnr-mena",
+  "brand": "Dahua",
+  "model": "SD49225XA-HNR",
+  "aliases": [
+    "2MP 25x Starlight AI PTZ MENA",
+    "Dahua PTZ Dubai Starlight"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2022,
+  "markets": [
+    "AE",
+    "SA",
+    "MENA"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p HD"
+  },
+  "sensor": "1/2.8\" STARVIS CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8-120 (25x optical)",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60-2.5 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "PoE (802.3at) / AC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Starlight low-light sensor",
+    "25x optical zoom",
+    "SMD Plus AI",
+    "perimeter protection",
+    "face detection",
+    "100m IR",
+    "H.265+",
+    "IP66",
+    "widely used hotels/malls UAE & Saudi Arabia"
+  ],
+  "sources": [
+    "https://www.dahuasecurity.com/products/All-Products/Discontinued-Products/PTZ-Cameras/SD49225XA-HNR"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1",
+      "notes": "ONVIF PTZ control supported (port 80). For Frigate autotracking add 'onvif: {host, port: 80, user, password, autotracking: {enabled: true}}'. Standard Dahua realmonitor URLs."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Supports both main and sub streams."
+    }
+  },
+  "last_verified": "2026-07-04"
+}

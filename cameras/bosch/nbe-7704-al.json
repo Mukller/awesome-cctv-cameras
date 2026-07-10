@@ -1,0 +1,109 @@
+{
+  "id": "bosch-nbe-7704-al",
+  "brand": "Bosch",
+  "model": "DINION 7100i IR (NBE-7704-AL)",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4K UHD",
+    "max_width": 3840,
+    "max_height": 2160,
+    "megapixels": 8.3
+  },
+  "video": {
+    "max_fps": 30,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "M-JPEG"
+    ]
+  },
+  "sensor": "1/1.8-inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.4-10",
+    "aperture": "F1.6",
+    "varifocal": true
+  },
+  "field_of_view_deg": "44-108",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 60
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at), 12 VDC, 24 VAC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2000,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66/IP67, IK10",
+  "audio": {
+    "two_way": true
+  },
+  "features": [
+    "Intelligent Video Analytics Pro (IVA Pro)",
+    "Starlight low-light technology",
+    "HDR (120 dB WDR)",
+    "Electronic Image Stabilization (EIS)",
+    "Intelligent IR (850 nm)",
+    "Dual microSD card slots",
+    "NDAA compliant"
+  ],
+  "operating_temp_c": "-40 to 60",
+  "dimensions_mm": "148 x 115",
+  "weight_g": 2950,
+  "release_year": 2023,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://catalog.boschbuildingtechnologies.com/xf/en/DINION-7100i-IR/p/F.01U.390.690/",
+    "https://netcamcenter.de/de/produkte/ip-kameras/nbe-7704-al",
+    "https://www.a1securitycameras.com/bosch-nbe-7704-al.html",
+    "https://www.surveillance-video.com/camera-nbe-7704-al.html",
+    "https://www.csd.com.au/products/BOS-NBE-7704-AL",
+    "https://www.use-ip.co.uk/bosch-nbe-7704-al.html",
+    "https://www.bhphotovideo.com/c/product/1831956-REG/bosch_nbe_7704_al_dinion_7100i_ir.html"
+  ],
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

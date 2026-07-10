@@ -1,0 +1,83 @@
+{
+  "id": "ubiquiti-g4-pro",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G4 Pro",
+  "aliases": [
+    "UVC-G4-Pro"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.1-12.3 (3x optical zoom)",
+    "aperture": "F1.53-F3.3",
+    "varifocal": true
+  },
+  "field_of_view_deg": "109.9 horizontal / 60 vertical / 127.7 diagonal (wide); 35 horizontal / 19.8 vertical / 40 diagonal (zoom)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE; 12.5W max"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "dimensions_mm": "86 (diameter) x 153",
+  "weight_g": 700,
+  "operating_temp_c": "-20 to 50",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "3x optical zoom",
+    "4K, 50 FPS max",
+    "AI event detection person/vehicle/animal",
+    "UniFi Protect ecosystem",
+    "built-in mic"
+  ],
+  "release_year": 2022,
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g4-pro"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

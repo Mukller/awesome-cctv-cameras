@@ -1,0 +1,70 @@
+{
+  "id": "eufy-solocam-c210",
+  "brand": "Eufy",
+  "model": "SoloCam C210",
+  "aliases": [
+    "T8B00322",
+    "T8B00122",
+    "eufy SoloCam C210 2K Battery Wire-Free"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2560,
+    "max_height": 1440,
+    "label": "2K QHD"
+  },
+  "lens": {
+    "count": 1,
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "135 diagonal",
+  "night_vision": {
+    "type": "ir"
+  },
+  "power": {
+    "method": "Rechargeable battery (up to 3 months) / optional solar panel"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K wire-free battery outdoor",
+    "infrared night vision",
+    "no subscription fee",
+    "built-in 8GB eMMC storage (no hub required)",
+    "AI human detection",
+    "Alexa / Google",
+    "IP67"
+  ],
+  "sources": [
+    "https://www.eufy.com/eu-en/products/t8b00322"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "eufy-eufycam-e330-pro",
+  "brand": "Eufy",
+  "model": "EufyCam E330 (Pro)",
+  "aliases": [
+    "T86P2",
+    "EufyCam E330 Professional"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "135 diagonal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 12
+  },
+  "power": {
+    "method": "Plug-in power adapter (5 m / 16.4 ft cable) for continuous 24/7 recording; HomeBase 3 required"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "4K UHD resolution",
+    "plug-in power for 24/7 continuous recording",
+    "cross-camera tracking",
+    "HomeBase 3 local storage (16 TB expandable)",
+    "BionicMind AI face recognition",
+    "color night vision",
+    "no subscription required",
+    "Alexa / Google Assistant"
+  ],
+  "sources": [
+    "https://us.eufy.com/pages/security-e330eufycam"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04"
+}

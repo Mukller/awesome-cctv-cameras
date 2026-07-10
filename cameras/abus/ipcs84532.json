@@ -1,0 +1,108 @@
+{
+  "id": "abus-ipcs84532",
+  "brand": "ABUS",
+  "model": "IPCS84532",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2560,
+    "max_height": 1440,
+    "megapixels": 4
+  },
+  "video": {
+    "max_fps": 25,
+    "codecs": [
+      "H.265",
+      "H.264",
+      "MJPEG"
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.8 to 120",
+    "aperture": "F1.6-F3.5",
+    "varifocal": true
+  },
+  "field_of_view_deg": "2.5 to 53 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 50
+  },
+  "power": {
+    "method": "12V DC / PoE+ (IEEE 802.3at)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "25x optical zoom",
+    "16x digital zoom",
+    "120dB WDR",
+    "object tracking",
+    "human/vehicle detection",
+    "2 alarm inputs",
+    "2 alarm outputs",
+    "360 degree pan",
+    "Ultra Low Light"
+  ],
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "169 diameter x 161",
+  "weight_g": 2450,
+  "environment": [
+    "outdoor",
+    "indoor"
+  ],
+  "markets": [
+    "EU"
+  ],
+  "sources": [
+    "https://www.expert-security.de/abus-ipcs84532-ip-dome-4mpx-t-n-ir-ptz-poe-ip66.html",
+    "https://www.alarm-technik.eu/IP-PTZ-IR-Dome-4-MPx-25x-ABUS-IPCS84532",
+    "https://c1.abus.com/asc-pim-assets-01/medias/docus/30/20240508-IPCS84532_BDA_INT.pdf"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-05"
+}

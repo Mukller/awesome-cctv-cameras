@@ -1,0 +1,93 @@
+{
+  "id": "intelbras-im5-wifi-outdoor",
+  "brand": "Intelbras",
+  "model": "iM5",
+  "aliases": [
+    "Intelbras iM5 3MP WiFi Outdoor Argentina Brazil"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "markets": [
+    "AR",
+    "BR",
+    "CL",
+    "LATAM"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "Fixed",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "107 horizontal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 20
+  },
+  "power": {
+    "method": "DC 12V (outdoor adapter)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Intelbras 3MP 2K WiFi outdoor bullet",
+    "color night vision",
+    "AI person/vehicle detection",
+    "Mibo Cloud / microSD / DVR NVR ONVIF",
+    "RTSP",
+    "IP67",
+    "H.265+",
+    "best-selling Mercado Libre Argentina outdoor cam",
+    "ANATEL certified Brazil"
+  ],
+  "sources": [
+    "https://www.intelbras.com/en/"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=0",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/cam/realmonitor?channel=1&subtype=1"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Uses Dahua protocol. ONVIF integration works."
+    },
+    "blue_iris": {
+      "profile": "Dahua",
+      "notes": "Select 'Dahua' profile. Intelbras uses Dahua protocol."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

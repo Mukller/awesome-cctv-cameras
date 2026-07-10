@@ -1,0 +1,114 @@
+{
+  "id": "reolink-rlc-1210a",
+  "brand": "Reolink",
+  "model": "RLC-1210A",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "status": "discontinued",
+  "end_of_sale_year": 2021,
+  "resolution": {
+    "megapixels": 12,
+    "label": "12MP UHD"
+  },
+  "field_of_view_deg": "67 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE 802.3af / DC 12V",
+    "voltage": "12V (DC) / PoE",
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "rtmp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "12MP ultra-high resolution PoE bullet",
+    "1/1.7\" large sensor",
+    "AI person/vehicle/animal/package",
+    "30m IR",
+    "ONVIF/RTSP",
+    "IP66",
+    "no subscription",
+    "discontinued (EOL 2021, replaced by RLC-1212A)"
+  ],
+  "sources": [
+    "https://reolink.com/product/rlc-1210a/",
+    "https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/",
+    "https://reolink.com/product-eol/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "4096x3072",
+        "fps": 20,
+        "codec": "H.265"
+      },
+      {
+        "name": "sub",
+        "resolution": "unknown",
+        "fps": 10,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.49\" CMOS",
+  "dimensions_mm": "Φ66 x 192",
+  "weight_g": 488,
+  "operating_temp_c": "-10 to 55",
+  "lens": {
+    "focal_length_mm": "5.8",
+    "aperture": "F1.6",
+    "varifocal": false,
+    "count": 1
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

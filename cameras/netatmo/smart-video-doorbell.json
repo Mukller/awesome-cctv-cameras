@@ -1,0 +1,74 @@
+{
+  "id": "netatmo-smart-video-doorbell",
+  "brand": "Netatmo",
+  "model": "Smart Video Doorbell",
+  "aliases": [
+    "Netatmo NDB01-EU Video Doorbell",
+    "Netatmo Sonnette vidéo connectée"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2021,
+  "markets": [
+    "FR",
+    "DE",
+    "UK",
+    "EU",
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "Fixed",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "165 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 4
+  },
+  "power": {
+    "method": "Hardwired (existing 16-24V AC wiring)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 32,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP44",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "NO SUBSCRIPTION FEES EVER",
+    "on-device AI person/face recognition (offline)",
+    "local microSD + Dropbox/FTP",
+    "Apple HomeKit Secure Video",
+    "Alexa / Google",
+    "two-way audio",
+    "IP44",
+    "165° wide FOV",
+    "GDPR-compliant EU data"
+  ],
+  "sources": [
+    "https://www.netatmo.com/smart-video-doorbell"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-06"
+}

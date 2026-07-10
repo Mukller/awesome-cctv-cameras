@@ -1,0 +1,105 @@
+{
+  "id": "reolink-argus-3-ultra",
+  "brand": "Reolink",
+  "model": "Argus 3 Ultra",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 horizontal / 55 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Built-in 21.6Wh rechargeable battery / USB-C / optional Reolink solar panel"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "p2p"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "person/vehicle/animal detection",
+    "PIR motion sensor",
+    "spotlight color night vision",
+    "active deterrence siren",
+    "time-lapse",
+    "no subscription required",
+    "dual-band WiFi 2.4/5 GHz",
+    "solar panel compatible"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://reolink.com/product/argus-3-ultra/",
+    "https://reolink.com/us/product/argus-3-ultra/",
+    "https://reolink.com/blog/reolink-argus-3-ultra-review/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "battery",
+    "solar",
+    "usb"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "127 x 90 x 56",
+  "weight_g": 335,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "Main stream",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

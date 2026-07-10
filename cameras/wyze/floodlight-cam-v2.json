@@ -1,0 +1,69 @@
+{
+  "id": "wyze-floodlight-cam-v2",
+  "brand": "Wyze",
+  "model": "Floodlight Cam v2",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.8",
+    "varifocal": false
+  },
+  "field_of_view_deg": "160 diagonal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 12
+  },
+  "power": {
+    "method": "Hardwired (AC mains)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K floodlight camera",
+    "2600-lumen floodlight",
+    "person/pet/vehicle detection",
+    "color night vision",
+    "built-in siren",
+    "no subscription required for basic",
+    "Alexa / Google Home"
+  ],
+  "sources": [
+    "https://www.wyze.com/products/wyze-cam-floodlight"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "wyze",
+      "notes": "No official RTSP. Use docker-wyze-bridge for local RTSP proxy."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

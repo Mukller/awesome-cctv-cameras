@@ -1,0 +1,93 @@
+{
+  "id": "tapo-c615f-kit",
+  "brand": "Tapo",
+  "model": "C615F Kit",
+  "aliases": [
+    "2K Floodlight Solar Pan/Tilt"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2025,
+  "resolution": {
+    "label": "2K",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3
+  },
+  "lens": {
+    "focal_length_mm": "4.0",
+    "aperture": "F1.6",
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "100 diagonal / 84 horizontal / 44 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Built-in rechargeable lithium-ion battery + included Tapo A201 solar panel; optional 5V/2.0A USB Type-C charging input (adapter not included)"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP65",
+  "audio": {
+    "two_way": true,
+    "microphone": true,
+    "speaker": true
+  },
+  "features": [
+    "solar-powered floodlight pan/tilt camera",
+    "800-lumen floodlight (4000K) + 2 built-in spotlights",
+    "338 pan / 97 tilt mechanical range (360 pan / 141 tilt coverage)",
+    "12x digital zoom",
+    "360deg AI tracking",
+    "AI person/pet/vehicle detection",
+    "color night vision",
+    "97dB siren",
+    "activity zones",
+    "no subscription"
+  ],
+  "sources": [
+    "https://us.store.tapo.com/",
+    "https://us.store.tapo.com/products/360-2k-floodlight-pan-tilt-security-camera-kit-with-solar-panel-tapo-c615f-kit",
+    "https://www.tp-link.com/us/support/faq/2680/",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c615f-kit/",
+    "https://www.tapo.com/us/product/smart-camera/tapo-c615f-kit/",
+    "https://community.tp-link.com/us/smart-home/forum/topic/852836",
+    "https://www.tapo.com/us/product/smart-camera/tapo-c615f-kit/v1/"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Battery/solar Tapo cameras do not support RTSP/ONVIF (TP-Link FAQ). Integrate via the community HomeAssistant-Tapo-Control integration (proprietary Tapo API, not ONVIF) or the Tapo app."
+    }
+  },
+  "video": {
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 20
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "dimensions_mm": "132.8 x 81.8 x 161.0",
+  "environment": [
+    "outdoor"
+  ],
+  "operating_temp_c": "-20 to 45",
+  "last_verified": "2026-07-01"
+}

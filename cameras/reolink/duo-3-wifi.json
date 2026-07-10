@@ -1,0 +1,100 @@
+{
+  "id": "reolink-duo-3-wifi",
+  "brand": "Reolink",
+  "model": "Duo 3 WiFi",
+  "type": "dual-lens",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 16,
+    "max_width": 7680,
+    "max_height": 2160,
+    "label": "16MP"
+  },
+  "sensor": "Dual 1/2.7\" CMOS (4K each)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180 horizontal / 55 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "16MP dual-lens panoramic",
+    "dual-band WiFi 5 (2.4/5GHz)",
+    "motion track",
+    "spotlight color night vision",
+    "no subscription"
+  ],
+  "release_year": 2024,
+  "sources": [
+    "https://reolink.com/product/reolink-duo-3-wifi/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "195 x 103 x 56",
+  "weight_g": 622,
+  "operating_temp_c": "-10 to 55",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "Main Stream",
+        "resolution": "7680x2160",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

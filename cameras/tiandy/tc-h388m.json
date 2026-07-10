@@ -1,0 +1,80 @@
+{
+  "id": "tiandy-tc-h388m",
+  "brand": "Tiandy",
+  "model": "TC-H388M",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/1.8\" Starlight CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.5-202",
+    "varifocal": true
+  },
+  "field_of_view_deg": "54-2.1 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "power": {
+    "method": "PoE++ (IEEE 802.3bt) / AC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "30x optical zoom",
+    "360° continuous pan",
+    "Starlight sensor",
+    "autotracking",
+    "H.265+ compression",
+    "smart IR"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://en.tiandy.com/index.php?s=%2FHome%2FProduct%2Fdetail%2Fid%2F507.html"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Most Tiandy models use Hikvision-compatible protocol."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

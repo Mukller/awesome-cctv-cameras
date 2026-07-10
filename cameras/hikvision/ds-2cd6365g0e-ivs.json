@@ -1,0 +1,75 @@
+{
+  "id": "hikvision-ds-2cd6365g0e-ivs",
+  "brand": "Hikvision",
+  "model": "DS-2CD6365G0E-IVS",
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2020,
+  "resolution": {
+    "megapixels": 6,
+    "label": "6MP 360°"
+  },
+  "field_of_view_deg": "360 fisheye",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 8
+  },
+  "power": {
+    "method": "PoE (802.3af) / DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "6MP 360° fisheye dome indoor",
+    "IVS smart analytics",
+    "people counting",
+    "heat map",
+    "4-channel dewarped",
+    "H.265+",
+    "IP66"
+  ],
+  "sources": [
+    "https://www.hikvision.com/en/products/"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "notes": "Fisheye camera — raw fisheye main stream; hardware dewarp views exposed as separate channels."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration. Default ONVIF port 80. Enable in Configuration > Network > Integration Protocol."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "Select 'Hikvision' profile. Use main stream for recording, sub stream for live view."
+    }
+  },
+  "last_verified": "2026-07-04"
+}

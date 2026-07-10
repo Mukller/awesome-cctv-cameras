@@ -1,0 +1,94 @@
+{
+  "id": "eufy-indoor-cam-2k-pan-tilt",
+  "brand": "Eufy",
+  "model": "Indoor Cam 2K Pan & Tilt",
+  "aliases": [
+    "T8410",
+    "Solo IndoorCam P24",
+    "Eufy 2K Indoor Pan & Tilt T8410"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_year": 2020,
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "Fixed",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 pan / 96 tilt",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 8
+  },
+  "power": {
+    "method": "DC 5V (micro-USB, hardwired)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http",
+    "rtsp"
+  ],
+  "ip_rating": "IP20",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K 360 pan/tilt indoor",
+    "AI human/pet detection",
+    "motion tracking",
+    "physical privacy shutter",
+    "no subscription",
+    "microSD local storage",
+    "HomeKit / Alexa / Google",
+    "RTSP / NAS support"
+  ],
+  "sources": [
+    "https://service.eufy.com/article-description/Introducing-eufy-Indoor-Cam-2K-Pan-Tilt",
+    "https://support.eufy.com/s/article/T8410-Indoor-Cam-2K-Pan-Tilt-INT-QSG"
+  ],
+  "power_source": [
+    "usb"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+      "notes": "RTSP must be enabled per camera in the Eufy app (Storage > RTSP/NAS). Community-reported path; eufy does not publish the URL.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app."
+    }
+  }
+}

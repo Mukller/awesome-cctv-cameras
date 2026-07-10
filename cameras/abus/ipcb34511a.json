@@ -1,0 +1,111 @@
+{
+  "id": "abus-ipcb34511a",
+  "brand": "ABUS",
+  "model": "IPCB34511A",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "resolution": {
+    "label": "4MP",
+    "max_width": 2688,
+    "max_height": 1520,
+    "megapixels": 4
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2688 x 1520",
+        "fps": 25
+      }
+    ]
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "103 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / 12V DC"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "120dB WDR",
+    "object recognition (people/vehicle)",
+    "dynamic GOP",
+    "metal housing",
+    "compatible with ABUS Secvest, Secoris and wAppLoxx Pro Plus"
+  ],
+  "operating_temp_c": "-25 to 60",
+  "dimensions_mm": "170 x 70 x 69",
+  "weight_g": 500,
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "markets": [
+    "EU",
+    "DE"
+  ],
+  "sources": [
+    "https://www.expert-security.de/abus-ipcb34511a-ip-bullet-4mpx-t-n-ir-poe-ip67.html",
+    "https://www.abus.com/int/Commercial-Security/Video-surveillance/Network-technology/IP-Mini-Tube-4-MPx-2.8mm"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/101",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/Streaming/Channels/102",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "ABUS Performance Line is Hikvision OEM — Hikvision-style RTSP paths (101 main / 102 sub / 103 third). Enable ONVIF/RTSP in the camera web UI (Network > Integration Protocol) first. Pattern from the IPCx OEM family (iSpyConnect, HA community); not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration after enabling ONVIF (Profile S) in the web UI."
+    },
+    "blue_iris": {
+      "profile": "Hikvision",
+      "notes": "ABUS Performance Line is Hikvision OEM — select the 'Hikvision' profile (or Generic ONVIF/RTSP)."
+    }
+  },
+  "last_verified": "2026-07-05"
+}

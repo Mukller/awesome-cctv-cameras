@@ -1,0 +1,84 @@
+{
+  "id": "ubiquiti-g3-flex",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect G3 Flex",
+  "aliases": [
+    "UVC-G3-FLEX"
+  ],
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2019,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p HD"
+  },
+  "sensor": "1/3\" 2MP HDR",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.0",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "87 horizontal / 47 vertical / 104 diagonal (lens correction off); 80 horizontal / 46 vertical / 92 diagonal (lens correction on)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 6
+  },
+  "power": {
+    "method": "802.3af PoE; 4W, 48V DC"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IPX4",
+  "dimensions_mm": "48 (diameter) x 108",
+  "weight_g": 170,
+  "operating_temp_c": "-20 to 40",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "1080p (1920x1080) flexible indoor/outdoor camera, 25 FPS max, H.264",
+    "adjustable lens and swivel base for vertical/horizontal viewing angle adjustment",
+    "multiple mounting options (desktop, wall, pole, hard-ceiling included; in-ceiling, pendant, Pro mount optional)",
+    "PoE powered",
+    "UniFi Protect ecosystem"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-g3-flex",
+    "https://store.ui.com/us/en/products/uvc-g3-flex"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

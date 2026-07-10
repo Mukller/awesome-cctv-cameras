@@ -1,0 +1,94 @@
+{
+  "id": "eufy-video-doorbell-e340",
+  "brand": "Eufy",
+  "model": "Video Doorbell E340",
+  "aliases": [
+    "T8214111",
+    "eufy E340 Dual Camera Video Doorbell"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "Dual: 2K front (2048x1536) + 1080p package (1600x1200)"
+  },
+  "lens": {
+    "count": 2,
+    "varifocal": false
+  },
+  "field_of_view_deg": "wide front + downward package view",
+  "night_vision": {
+    "type": "color",
+    "range_m": 5
+  },
+  "power": {
+    "method": "Removable 6500 mAh battery (up to 4 months) / hardwired 16-24 VAC (10 VA) or 19V 0.6A DC adapter"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false,
+    "notes": "8 GB built-in eMMC; expandable via HomeBase 2/3"
+  },
+  "protocols": [
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-camera doorbell (2K front + downward package cam)",
+    "head-to-toe view",
+    "dual-light color night vision",
+    "AI motion / package detection",
+    "no subscription fee",
+    "local HomeBase storage",
+    "Alexa / Google (no HomeKit)",
+    "two-way audio",
+    "IP65"
+  ],
+  "sources": [
+    "https://www.eufy.com/products/t8214111",
+    "https://service.eufy.com/article-description/Understanding-the-Specifications-of-the-Video-Doorbell-E340"
+  ],
+  "power_source": [
+    "battery",
+    "ac-mains"
+  ],
+  "environment": [
+    "outdoor"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 720,
+        "height": 960,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{ip}:8554/live0",
+      "notes": "RTSP is served via the HomeBase (Settings > Storage > NAS/RTSP), not the doorbell directly. Portrait aspect — set detect to 720x960. No ONVIF. Hardwired recommended for continuous RTSP.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use eufy_security HACS integration. RTSP available via HomeBase when enabled. Doorbell press exposed as event."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use the HomeBase RTSP URL as a Generic/RTSP source (no ONVIF). Portrait aspect ratio."
+    }
+  }
+}

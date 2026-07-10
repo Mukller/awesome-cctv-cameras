@@ -1,0 +1,73 @@
+{
+  "id": "vivotek-fd816c-hf2",
+  "brand": "Vivotek",
+  "model": "FD816C-HF2",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2018,
+  "resolution": {
+    "megapixels": 2,
+    "label": "1080p HD"
+  },
+  "field_of_view_deg": "110h",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP41",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Vivotek 1080p indoor vandal dome fixed",
+    "WDR",
+    "Smart VCA",
+    "H.265",
+    "IP41",
+    "IK10",
+    "legacy popular model"
+  ],
+  "sources": [
+    "https://www.vivotek.com/en-US/products/network-cameras/dome"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live.sdp",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/live2.sdp"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Vivotek",
+      "notes": "Select 'Vivotek' profile. ONVIF supported."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

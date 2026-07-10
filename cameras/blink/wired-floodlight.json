@@ -1,0 +1,62 @@
+{
+  "id": "blink-wired-floodlight",
+  "brand": "Blink",
+  "model": "Wired Floodlight Camera",
+  "aliases": [
+    "Blink Wired Floodlight"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "Fixed",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "142 diagonal",
+  "night_vision": {
+    "type": "color",
+    "range_m": 12
+  },
+  "power": {
+    "method": "Hardwired (AC mains, standard junction box)"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K wired floodlight camera",
+    "2600-lumen LED floodlights",
+    "person detection",
+    "motion-activated light",
+    "Alexa / Fire TV",
+    "Blink Subscription for cloud"
+  ],
+  "sources": [
+    "https://blinkforhome.com/products"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-06"
+}

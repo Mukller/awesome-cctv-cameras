@@ -1,0 +1,77 @@
+{
+  "id": "tapo-c402",
+  "brand": "Tapo",
+  "model": "Tapo C402",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "label": "1080p Full HD",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "lens": {
+    "focal_length_mm": "3.17",
+    "aperture": "F1.65",
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "125° (Diagonal), 111° (Horizontal), 56° (Vertical)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 9
+  },
+  "power": {
+    "method": "Built-in rechargeable lithium-ion battery, optionally trickle-charged via Tapo solar panel (sold separately, e.g. Tapo A201/Tapo Solar Panel)"
+  },
+  "storage": {
+    "onboard": false,
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "nvr_compatible": true
+  },
+  "protocols": [],
+  "ip_rating": "IP65",
+  "audio": {},
+  "features": [
+    "1080p wire-free battery camera",
+    "180-day battery",
+    "spotlight color night vision",
+    "AI person detection",
+    "built-in siren",
+    "solar panel compatible",
+    "Alexa / Google",
+    "no subscription"
+  ],
+  "sources": [
+    "https://www.tapo.com/us/product/smart-camera/tapo-c402-kit/",
+    "https://www.tp-link.com/us/support/faq/2680/",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c402/",
+    "https://www.tp-link.com/us/document/48138/"
+  ],
+  "release_year": 2023,
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Battery/solar Tapo cameras do not support RTSP/ONVIF (TP-Link FAQ). Integrate via the community HomeAssistant-Tapo-Control integration (proprietary Tapo API, not ONVIF) or the Tapo app."
+    }
+  },
+  "video": {
+    "codecs": [
+      "h264"
+    ],
+    "max_fps": 15,
+    "streams": []
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS Starlight Sensor",
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "D60 x 89 (diameter x height)",
+  "weight_g": 230,
+  "last_verified": "2026-06-30"
+}

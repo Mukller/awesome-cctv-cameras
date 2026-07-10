@@ -1,0 +1,112 @@
+{
+  "id": "reolink-rlc-511w",
+  "brand": "Reolink",
+  "model": "RLC-511W",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2020,
+  "resolution": {
+    "megapixels": 5,
+    "label": "5MP"
+  },
+  "field_of_view_deg": "90-31 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V",
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "5MP WiFi outdoor bullet fixed lens",
+    "30m IR",
+    "built-in mic",
+    "ONVIF/RTSP",
+    "IP66",
+    "no subscription"
+  ],
+  "sources": [
+    "https://reolink.com/product/rlc-511w/",
+    "https://reolink.com/files/docs/specs/RLC-511W-IP-Camera-Specifications.pdf",
+    "https://support.reolink.com/articles/900000617826-Which-Reolink-Products-Support-CGI-RTSP-ONVIF/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "sensor": "1/2.7\" CMOS",
+  "dimensions_mm": "80 x 72 x 238",
+  "weight_g": 750,
+  "operating_temp_c": "-10 to 55",
+  "lens": {
+    "focal_length_mm": "2.7-12",
+    "aperture": "F1.6",
+    "varifocal": true,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "Mainstream",
+        "resolution": "2560x1920",
+        "fps": 30,
+        "codec": "H.264"
+      },
+      {
+        "name": "Substream",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "reolink-rlc-823a-16x",
+  "brand": "Reolink",
+  "model": "RLC-823A 16X",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.3-86 (16x optical zoom)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "54.2-3.6 horizontal, 41.7-2.1 vertical",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 80
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3at) / DC 12V",
+    "voltage": "48V (PoE) / 12V (DC)",
+    "consumption_w": 24
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp",
+    "http",
+    "p2p"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "16x optical zoom",
+    "360° pan / 90° tilt",
+    "auto-tracking (person/vehicle/pet)",
+    "person/vehicle/pet detection",
+    "IR night vision up to 80m",
+    "no subscription required"
+  ],
+  "release_year": 2023,
+  "sources": [
+    "https://reolink.com/product/rlc-823a-16x/",
+    "https://home-cdn.reolink.us/files/docs/specs/RLC-823A-16X-IP-Camera-Specifications.pdf"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "Φ132 x 281",
+  "weight_g": 1600,
+  "operating_temp_c": "-10 to 50",
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "Mainstream",
+        "resolution": "3840x2160",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

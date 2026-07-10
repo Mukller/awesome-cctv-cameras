@@ -1,0 +1,105 @@
+{
+  "id": "tapo-c510w",
+  "brand": "Tapo",
+  "model": "Tapo C510W",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "label": "2K (3MP)",
+    "max_width": 2304,
+    "max_height": 1296,
+    "megapixels": 3
+  },
+  "lens": {
+    "focal_length_mm": "3.9",
+    "aperture": "F2.0",
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "97.23 (diagonal), 82.3 (horizontal), 45.31 (vertical)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "12V DC power adapter (barrel jack, inside dia 2.1mm / outside dia 5.5mm; AC input 100-240V 50/60Hz)"
+  },
+  "storage": {
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "onboard": false,
+    "nvr_compatible": false
+  },
+  "protocols": [
+    "rtsp",
+    "onvif"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "outdoor 2K pan/tilt",
+    "360deg pan / 130deg tilt",
+    "spotlights color night vision",
+    "AI person detection",
+    "motion tracking",
+    "IP65",
+    "15fps max",
+    "no subscription"
+  ],
+  "sources": [
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-c510w/",
+    "https://www.tapo.com/us/product/smart-camera/tapo-c510w/",
+    "https://static.tp-link.com/upload/product-overview/2024/202403/20240319/Tapo%20C510W%201.0_Datasheet.pdf"
+  ],
+  "release_year": 2023,
+  "power_source": [
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/stream1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/stream2"
+    },
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Native TP-Link Tapo integration. Requires Tapo cloud account credentials."
+    },
+    "blue_iris": {
+      "profile": "Generic/ONVIF",
+      "notes": "Use Generic/ONVIF profile. RTSP streams: /stream1 (main), /stream2 (sub). Must enable ONVIF in Tapo app."
+    }
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "operating_temp_c": "-30 to 60",
+  "dimensions_mm": "123.8 x 123 x 90",
+  "weight_g": 364,
+  "environment": [
+    "outdoor"
+  ],
+  "last_verified": "2026-06-30"
+}

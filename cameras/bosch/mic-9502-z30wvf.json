@@ -1,0 +1,117 @@
+{
+  "id": "bosch-mic-9502-z30wvf",
+  "brand": "Bosch",
+  "model": "MIC IP fusion 9000i (MIC-9502-Z30WVF)",
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe",
+    "ac-mains"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "M-JPEG",
+      "JPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "Optical",
+        "resolution": "1920x1080",
+        "codec": "H.265",
+        "fps": 30
+      },
+      {
+        "name": "Thermal",
+        "resolution": "640x480",
+        "codec": "H.265",
+        "fps": 30
+      }
+    ]
+  },
+  "sensor": "1/2.8-inch Exmor R CMOS (visible); uncooled VOx microbolometer (thermal)",
+  "lens": {
+    "count": 2,
+    "focal_length_mm": "4.3-129",
+    "aperture": "F1.6-4.7",
+    "varifocal": true
+  },
+  "field_of_view_deg": "Thermal ~12 (50mm lens); visible 30x optical zoom (4.3-129mm)",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "24 VAC (21-30 VAC) and/or 95W High PoE"
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP68",
+  "features": [
+    "Dual visible + thermal PTZ (side-by-side imagers)",
+    "VGA 640x480 thermal imager, 30 Hz",
+    "Uncooled vanadium oxide microbolometer thermal sensor",
+    "30x optical zoom + 12x digital zoom (visible)",
+    "50mm thermal lens",
+    "360° continuous pan rotation, 296° tilt",
+    "IK10 vandal resistant",
+    "Intelligent tracking",
+    "Object detection range up to 4517 m",
+    "10/100BASE-T Ethernet",
+    "Low-light sensitivity 0.0077 lx (color)",
+    "Ruggedized aluminum housing for extreme environments"
+  ],
+  "operating_temp_c": "-40 to 65",
+  "dimensions_mm": "421 x 298 x 181",
+  "weight_g": 9000,
+  "release_year": 2019,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://commerce.boschsecurity.com/xl/en/MIC-IP-fusion-9000i/p/F.01U.368.932/",
+    "https://www.a1securitycameras.com/bosch-mic-9502-z30wvf.html",
+    "https://netcamcenter.de/de/produkte/ip-kameras/mic-9502-z30wvf"
+  ],
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

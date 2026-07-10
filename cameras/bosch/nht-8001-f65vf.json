@@ -1,0 +1,106 @@
+{
+  "id": "bosch-nht-8001-f65vf",
+  "brand": "Bosch",
+  "model": "DINION IP thermal 8000 (NHT-8001-F65VF)",
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "resolution": {
+    "label": "VGA (640 x 480)",
+    "max_width": 640,
+    "max_height": 480,
+    "megapixels": 0.3
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "M-JPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "Thermal",
+        "resolution": "640x480",
+        "fps": 30,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "sensor": "Un-cooled vanadium oxide (VOx) microbolometer, 17 µm pixel pitch",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "65",
+    "varifocal": false
+  },
+  "field_of_view_deg": "9.6 x 7.2",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "24 VAC (SELV) ±10% 50/60 Hz, 34 W max."
+  },
+  "storage": {
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "features": [
+    "Thermal imaging (uncooled VOx microbolometer)",
+    "Thermal resolution 640x480 (VGA)",
+    "65 mm fixed thermal lens, 9.6° x 7.2° FoV",
+    "Integrated Intelligent Video Analytics",
+    "ONVIF Profile S",
+    "Human detection up to 1270 m",
+    "Surge-protected analogue video output for hybrid operation",
+    "No artificial/natural lighting required; sees through smoke, dust, haze, fog"
+  ],
+  "operating_temp_c": "-50 to 55",
+  "dimensions_mm": "141 x 164 x 430",
+  "release_year": 2019,
+  "environment": [
+    "outdoor"
+  ],
+  "sources": [
+    "https://assets.catalog.boschbuildingtechnologies.com/public/documents/DINION_IP_thermal_80_Data_sheet_enUS_23112691083.pdf",
+    "https://netcamcenter.de/de/produkte/ip-kameras/nht-8001-f65vf",
+    "https://www.sourcesecurity.com/bosch-nht-8001-f65vf-ip-camera-technical-details.html",
+    "https://www.surveillance-video.com/camera-nht-8001-f65vf.html",
+    "https://networkcamerastore.com/products/bosch-nht-8001-f65vf"
+  ],
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

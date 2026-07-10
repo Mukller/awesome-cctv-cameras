@@ -1,0 +1,82 @@
+{
+  "id": "axis-p3818-pve",
+  "brand": "Axis",
+  "model": "P3818-PVE",
+  "aliases": [
+    "Axis P3818-PVE Panoramic Dome"
+  ],
+  "type": "panoramic",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 13,
+    "label": "13MP (3-sensor, 180\u00b0)"
+  },
+  "sensor": "3x 1/2.8\" CMOS",
+  "lens": {
+    "count": 3,
+    "focal_length_mm": "2.6 (fixed per sensor)",
+    "varifocal": false
+  },
+  "field_of_view_deg": "180",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "High PoE (802.3bt)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "360deg panoramic 4-sensor",
+    "20MP total",
+    "Lightfinder",
+    "Forensic WDR",
+    "AXIS Object Analytics",
+    "Zipstream",
+    "IK10"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-p3818-pve"
+  ],
+  "last_verified": "2026-07-04",
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

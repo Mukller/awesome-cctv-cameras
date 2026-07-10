@@ -1,0 +1,91 @@
+{
+  "id": "reolink-d1200",
+  "brand": "Reolink",
+  "model": "D1200",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 12,
+    "label": "12MP UHD"
+  },
+  "field_of_view_deg": "93 horizontal / 49 vertical",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "consumption_w": 12
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Reolink add-on PoE dome 12MP NVR expansion",
+    "30m IR + color spotlight night vision",
+    "IP67",
+    "NVR-only — no standalone ONVIF/RTSP",
+    "built-in mic/speaker two-way audio",
+    "no subscription"
+  ],
+  "sources": [
+    "https://reolink.com/product/rlk8-1200d4-a/",
+    "https://support.reolink.com/hc/en-us/articles/360003575413-Which-Cameras-Support-Micro-SD-Card/",
+    "https://support.reolink.com/articles/360003764334-Which-Reolink-Cameras-Support-Two-Way-Audio/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "notes": "D1200 has no confirmed standalone RTSP/ONVIF service — like its D400/D500/D800 siblings, it is an add-on camera intended to work through a Reolink PoE NVR. Pull this camera's channel from the NVR's own RTSP stream rather than connecting to the camera's IP directly."
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Not directly discoverable — treat as an NVR-attached channel rather than a standalone ONVIF device. Add the parent Reolink NVR to the Reolink HA integration instead."
+    },
+    "blue_iris": {
+      "notes": "Cannot be confirmed to work as a direct ONVIF/RTSP add. Add the parent Reolink NVR as the video source and pull this camera's channel from the NVR."
+    }
+  },
+  "sensor": "1/2.49\" CMOS",
+  "dimensions_mm": "Φ117.4 x 103.7",
+  "weight_g": 510,
+  "operating_temp_c": "-10 to 55",
+  "lens": {
+    "focal_length_mm": "4.0",
+    "aperture": "F1.6",
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265"
+    ],
+    "max_fps": 20,
+    "streams": [
+      {
+        "name": "Main Stream",
+        "resolution": "4512x2512",
+        "fps": 20,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

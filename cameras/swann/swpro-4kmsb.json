@@ -1,0 +1,67 @@
+{
+  "id": "swann-swpro-4kmsb",
+  "brand": "Swann",
+  "model": "SWPRO-4KMSB",
+  "aliases": [
+    "Swann 4K Thermal Sensing Bullet (DVR add-on)"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2022,
+  "markets": [
+    "UK",
+    "US",
+    "AU"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.6 (fixed)",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "105 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 45
+  },
+  "power": {
+    "method": "BNC (coaxial) + DC 12V via DVR"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "4K UHD DVR add-on camera",
+    "True Detect PIR thermal sensor (human heat detection)",
+    "sensor warning light (color at night)",
+    "45m color + IR night vision",
+    "IP66",
+    "requires Swann DVR recorder"
+  ],
+  "sources": [
+    "https://support.swann.com/hc/en-us/articles/4643987041561-PRO-4KMSB-4K-Ultra-HD-Thermal-Sensing-Bullet-Security-Camera"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "last_verified": "2026-07-06"
+}

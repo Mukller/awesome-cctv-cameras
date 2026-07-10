@@ -1,0 +1,107 @@
+{
+  "id": "reolink-rlc-823s2",
+  "brand": "Reolink",
+  "model": "RLC-823S2",
+  "aliases": [
+    "4K PTZ 16x Dome"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "5.3-86 (16x optical zoom)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "54.2-3.6 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 80
+  },
+  "power": {
+    "method": "PoE (802.3at) / DC 12V",
+    "consumption_w": 24
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "rtmp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "16x optical zoom",
+    "3D zoom",
+    "360deg pan / 90deg tilt",
+    "spotlight color night vision",
+    "person/vehicle/animal detection",
+    "no subscription"
+  ],
+  "release_year": 2024,
+  "sources": [
+    "https://reolink.com/product/rlc-823s2/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe",
+    "dc"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_main",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/h264Preview_01_sub"
+    },
+    "home_assistant": {
+      "integration": "reolink",
+      "notes": "Native Reolink integration auto-discovers via ONVIF on port 8000."
+    },
+    "blue_iris": {
+      "profile": "Reolink",
+      "notes": "Select 'Reolink' profile. If not listed, use Generic/ONVIF with RTSP path /h264Preview_01_main."
+    }
+  },
+  "dimensions_mm": "373 x 177 x 140",
+  "weight_g": 2340,
+  "operating_temp_c": "-10 to 50",
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 25,
+    "streams": [
+      {
+        "name": "Mainstream",
+        "resolution": "3840x2160",
+        "fps": 25,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ]
+}

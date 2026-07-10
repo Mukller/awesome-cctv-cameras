@@ -1,0 +1,86 @@
+{
+  "id": "eufy-floodlight-cam-2-pro",
+  "brand": "Eufy",
+  "model": "Floodlight Cam 2 Pro",
+  "aliases": [
+    "T8423"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "wifi",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "130 lens; 360 pan / 130 tilt",
+  "night_vision": {
+    "type": "color",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Hardwired (AC) / no battery"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http",
+    "rtsp"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "built-in 3000-lumen floodlights",
+    "360deg pan / 180deg tilt",
+    "2K color night vision",
+    "AI person detection",
+    "no subscription",
+    "HomeBase compatible",
+    "Alexa / Google"
+  ],
+  "release_year": 2022,
+  "sources": [
+    "https://service.eufy.com/article-description/eufy-Floodlight-Cam-2-Pro-FAQ"
+  ],
+  "power_source": [
+    "ac-mains"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+      "notes": "Floodlight Cam 2 Pro (T8423) is on Eufy's official RTSP-supported list; RTSP/NAS must be enabled per-camera in the Eufy Security app (Settings > Storage > NAS/RTSP). No HomeBase required.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use eufy_security HACS integration. RTSP must be enabled in the Eufy Security app."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in the Eufy Security app."
+    }
+  }
+}

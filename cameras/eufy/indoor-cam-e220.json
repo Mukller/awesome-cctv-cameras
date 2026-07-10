@@ -1,0 +1,90 @@
+{
+  "id": "eufy-indoor-cam-e220",
+  "brand": "Eufy",
+  "model": "Indoor Cam E220",
+  "aliases": [
+    "T8410121",
+    "Eufy E220 2K Indoor Pan/Tilt"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "release_year": 2022,
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "2K"
+  },
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "360 pan / 96 tilt",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "DC 5V (USB, hardwired)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": false,
+    "cloud": false
+  },
+  "protocols": [
+    "http",
+    "rtsp"
+  ],
+  "ip_rating": "IP20",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K indoor pan/tilt (successor to Indoor Cam 2K Pan & Tilt)",
+    "infrared night vision",
+    "AI person/pet/crying detection",
+    "motion tracking",
+    "no subscription",
+    "microSD local storage",
+    "HomeKit / Alexa / Google",
+    "RTSP / NAS support"
+  ],
+  "sources": [
+    "https://www.eufy.com/products/t8410121"
+  ],
+  "power_source": [
+    "usb"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/live0",
+      "notes": "RTSP must be enabled per camera in the Eufy app (Storage > RTSP/NAS). Community-reported path; eufy does not publish the URL.",
+      "verified": false
+    },
+    "home_assistant": {
+      "integration": "eufy_security",
+      "notes": "Use eufy_security HACS integration. RTSP must be enabled in Eufy app per camera."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile. RTSP must be enabled per camera in Eufy app."
+    }
+  }
+}

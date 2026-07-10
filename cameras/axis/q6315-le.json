@@ -1,0 +1,88 @@
+{
+  "id": "axis-q6315-le",
+  "brand": "Axis",
+  "model": "Q6315-LE",
+  "aliases": [
+    "Axis Q6315-LE PTZ 32x 4K"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "6.9-214.6 (31x optical zoom)",
+    "aperture": "F1.4",
+    "varifocal": true
+  },
+  "field_of_view_deg": "60.6-2 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 300
+  },
+  "power": {
+    "method": "High PoE (802.3bt)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "31x optical zoom",
+    "4MP 30fps",
+    "Lightfinder",
+    "OptimizedIR 200m",
+    "Autotracking 2",
+    "AXIS Object Analytics",
+    "Forensic WDR",
+    "Zipstream H.265/H.264",
+    "IK10"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-q6315-le"
+  ],
+  "last_verified": "2026-07-04",
+  "markets": [
+    "global"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

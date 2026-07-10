@@ -1,0 +1,87 @@
+{
+  "id": "ubiquiti-ai-360",
+  "brand": "Ubiquiti",
+  "model": "UniFi Protect AI 360",
+  "aliases": [
+    "UVC-AI-360"
+  ],
+  "type": "fisheye",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 4,
+    "max_width": 1920,
+    "max_height": 1920,
+    "label": "2K (1:1, fisheye)"
+  },
+  "sensor": "5MP CMOS",
+  "lens": {
+    "count": 1,
+    "varifocal": false
+  },
+  "field_of_view_deg": "360",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 9
+  },
+  "power": {
+    "method": "PoE; 8.64W max"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "rtsp"
+  ],
+  "ip_rating": "IPX4",
+  "dimensions_mm": "147 (diameter) x 49",
+  "weight_g": 655,
+  "operating_temp_c": "-20 to 40",
+  "video": {
+    "max_fps": 30
+  },
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "360-degree fisheye panoramic view, output resolution 1920x1920 (1:1) -- not 3840x2160/4K as previously stored",
+    "IK08 tamper resistance",
+    "AI-powered detection (face, LPR)",
+    "dewarping in UniFi Protect",
+    "PoE powered",
+    "UniFi Protect ecosystem",
+    "built-in mic and speaker"
+  ],
+  "sources": [
+    "https://techspecs.ui.com/unifi/cameras-nvrs/uvc-ai-360",
+    "https://store.ui.com/us/en/products/uvc-ai-360"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsps://{ip}:7441/{camera_id}?enableSrtp"
+    },
+    "home_assistant": {
+      "integration": "unifiprotect",
+      "notes": "Native UniFi Protect integration. Requires UniFi Protect console."
+    },
+    "blue_iris": {
+      "profile": "Generic/RTSP",
+      "notes": "Use Generic/RTSP profile with RTSPS URL from UniFi Protect. Requires Protect RTSP stream enabled per camera."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

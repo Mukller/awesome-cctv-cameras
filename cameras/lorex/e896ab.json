@@ -1,0 +1,65 @@
+{
+  "id": "lorex-e896ab",
+  "brand": "Lorex",
+  "model": "E896AB",
+  "aliases": [
+    "4K Smart Deterrence Bullet with AI"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8 (fixed)",
+    "aperture": "F1.4",
+    "varifocal": false
+  },
+  "field_of_view_deg": "111 horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 45
+  },
+  "power": {
+    "method": "PoE (802.3af)"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [],
+  "ip_rating": "IP67",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "dimensions_mm": "73 x 175 x 70",
+  "weight_g": 520,
+  "features": [
+    "4K AI smart deterrence bullet",
+    "color night vision (up to 45m ambient, 30m total dark)",
+    "person and vehicle detection",
+    "active deterrence LED lights and siren",
+    "smart motion detection zones",
+    "H.265",
+    "microSD slot confirmed present (capacity not confirmed)",
+    "no officially confirmed RTSP/ONVIF -- Lorex help center makes no mention of it for this model; the community Dahua-OEM RTSP path is unofficial"
+  ],
+  "sources": [
+    "https://www.lorex.com/products/4k-smart-deterrence-bullet-camera"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "last_verified": "2026-07-06"
+}

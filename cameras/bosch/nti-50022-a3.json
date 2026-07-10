@@ -1,0 +1,84 @@
+{
+  "id": "bosch-nti-50022-a3",
+  "brand": "Bosch",
+  "model": "DINION IP bullet 5000 HD (NTI-50022-A3)",
+  "aliases": [
+    "AUTODOME IP 7000",
+    "NTI-50022-A3"
+  ],
+  "type": "bullet",
+  "connectivity": [
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-94 (20x optical zoom)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "57.6-3.1 horizontal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "power": {
+    "method": "High PoE (802.3at) / AC 24V"
+  },
+  "storage": {
+    "onboard": true,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "20x optical zoom",
+    "12x digital zoom",
+    "OptimizedIR 200m",
+    "Intelligent Video Analytics",
+    "IVA Pro",
+    "Starlight low-light",
+    "IntelliVision deep learning",
+    "IK10",
+    "auto-tracking"
+  ],
+  "sources": [
+    "https://assets.catalog.boschbuildingtechnologies.com/public/documents/NTI_5000_A3_Data_sheet_enUS_9007220087116299.pdf"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/rtsp_tunnel"
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "notes": "Use ONVIF integration."
+    },
+    "blue_iris": {
+      "profile": "Bosch",
+      "notes": "Select 'Bosch' profile. ONVIF discovery supported."
+    }
+  },
+  "last_verified": "2026-07-06"
+}

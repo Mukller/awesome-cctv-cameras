@@ -1,0 +1,78 @@
+{
+  "id": "reolink-argus-eco",
+  "brand": "Reolink",
+  "model": "Argus Eco",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2019,
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP Super HD"
+  },
+  "field_of_view_deg": "100 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Rechargeable battery / solar optional"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "3MP IR budget battery camera",
+    "wire-free solar optional",
+    "motion detection",
+    "person/vehicle detection",
+    "no subscription",
+    "Google Assistant/Alexa (coming soon per Reolink)"
+  ],
+  "sources": [
+    "https://reolink.com/product/argus-eco/"
+  ],
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2304x1296",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "Φ71 x 186",
+  "weight_g": 360,
+  "operating_temp_c": "-10 to 55",
+  "last_verified": "2026-07-04"
+}

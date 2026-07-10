@@ -1,0 +1,78 @@
+{
+  "id": "reolink-argus-pro",
+  "brand": "Reolink",
+  "model": "Argus Pro",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2018,
+  "resolution": {
+    "megapixels": 2,
+    "label": "1080p HD"
+  },
+  "field_of_view_deg": "130 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Rechargeable battery OR DC adapter (dual power)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 64,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "dual-power: battery OR mains adapter",
+    "1080p starlight",
+    "solar optional",
+    "no subscription",
+    "IP65"
+  ],
+  "sources": [
+    "https://reolink.com/product/argus-pro/",
+    "https://reolink.com/files/docs/specs/Reolink-Argus-Pro-IP-Camera-Specifications.pdf"
+  ],
+  "power_source": [
+    "battery",
+    "solar",
+    "dc"
+  ],
+  "last_verified": "2026-07-04",
+  "sensor": "Starlight CMOS",
+  "lens": {
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "indoor",
+    "outdoor"
+  ],
+  "dimensions_mm": "96 x 58 x 59",
+  "weight_g": 230,
+  "operating_temp_c": "-10 to 55"
+}

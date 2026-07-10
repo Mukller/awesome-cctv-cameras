@@ -1,0 +1,56 @@
+{
+  "id": "swann-buddy-doorbell",
+  "brand": "Swann",
+  "model": "Buddy Video Doorbell",
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "megapixels": 2,
+    "label": "1080p HD"
+  },
+  "field_of_view_deg": "140h",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 5
+  },
+  "power": {
+    "method": "Battery / hardwired"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 0,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "http"
+  ],
+  "ip_rating": "IP44",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "Swann Buddy 1080p WiFi battery doorbell AU",
+    "140° view",
+    "two-way audio",
+    "no subscription",
+    "IP44"
+  ],
+  "sources": [
+    "https://us.swann.com/swifi-buddy/"
+  ],
+  "markets": [
+    "AU",
+    "US"
+  ],
+  "power_source": [
+    "battery",
+    "ac-mains"
+  ],
+  "last_verified": "2026-07-06"
+}

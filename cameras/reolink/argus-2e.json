@@ -1,0 +1,79 @@
+{
+  "id": "reolink-argus-2e",
+  "brand": "Reolink",
+  "model": "Argus 2E",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2021,
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2312,
+    "max_height": 1304,
+    "label": "3MP 2K"
+  },
+  "field_of_view_deg": "120 diagonal",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Rechargeable battery / solar optional"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "3MP 2K upgrade over Argus 2",
+    "wire-free solar optional",
+    "PIR person/vehicle detection",
+    "starlight IR",
+    "time-lapse",
+    "no subscription",
+    "Alexa/Google"
+  ],
+  "sources": [
+    "https://reolink.com/product/argus-2e/"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "battery",
+    "solar"
+  ],
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "2312x1304",
+        "fps": 15,
+        "codec": "H.264"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "105 x 105 x 58",
+  "weight_g": 310,
+  "operating_temp_c": "-10 to 55"
+}

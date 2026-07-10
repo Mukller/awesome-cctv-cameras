@@ -1,0 +1,80 @@
+{
+  "id": "tapo-d230s1",
+  "brand": "Tapo",
+  "model": "D230S1",
+  "aliases": [
+    "2K Battery Video Doorbell Kit"
+  ],
+  "type": "doorbell",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2023,
+  "resolution": {
+    "label": "2K",
+    "max_width": 2560,
+    "max_height": 1920,
+    "megapixels": 5
+  },
+  "lens": {
+    "aperture": "F/2.1",
+    "count": 1
+  },
+  "field_of_view_deg": "160 (diagonal)",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 8
+  },
+  "power": {
+    "method": "battery"
+  },
+  "storage": {
+    "max_microsd_gb": 512,
+    "cloud": true,
+    "onboard": false,
+    "nvr_compatible": false
+  },
+  "protocols": [],
+  "ip_rating": "IP64",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "2K wire-free battery video doorbell",
+    "10,000 mAh battery",
+    "180deg head-to-toe view",
+    "AI person/vehicle/pet detection",
+    "color night vision",
+    "chime included",
+    "no subscription",
+    "requires Tapo H200 hub"
+  ],
+  "sources": [
+    "https://www.tapo.com/us/product/smart-camera/tapo-d230s1/",
+    "https://www.tp-link.com/us/home-networking/cloud-camera/tapo-d230s1/",
+    "https://www.tp-link.com/us/support/faq/3879/",
+    "https://www.tapo.com/en/product/smart-camera/tapo-d230s1/",
+    "https://www.tapo.com/us/faq/397/"
+  ],
+  "power_source": [
+    "battery"
+  ],
+  "configs": {
+    "home_assistant": {
+      "integration": "tapo",
+      "notes": "Requires Tapo H200 hub. No RTSP or ONVIF — hub-based only. TP-Link Tapo integration exposes the doorbell via the hub. Not compatible with Frigate or Blue Iris."
+    }
+  },
+  "video": {
+    "codecs": [
+      "h264"
+    ],
+    "max_fps": 15
+  },
+  "sensor": "1/2.7\"",
+  "operating_temp_c": "-20 to 45",
+  "dimensions_mm": "146 x 54.5 x 35.5",
+  "last_verified": "2026-06-30"
+}

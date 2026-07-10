@@ -1,0 +1,75 @@
+{
+  "id": "ezviz-h8c-pro-4k",
+  "brand": "EZVIZ",
+  "model": "H8c Pro 4K",
+  "aliases": [
+    "EZVIZ H8c Pro 4K Outdoor Pan/Tilt"
+  ],
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "markets": [
+    "UK",
+    "EU",
+    "global"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4 or 6 (fixed, buyer's choice)",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "350 pan / 80 tilt",
+  "night_vision": {
+    "type": "color",
+    "range_m": 30
+  },
+  "power": {
+    "method": "DC 12V"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": true,
+    "cloud": true
+  },
+  "protocols": [],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "dimensions_mm": "100 x 136 x 140",
+  "weight_g": 540,
+  "operating_temp_c": "-30 to 50",
+  "environment": [
+    "outdoor"
+  ],
+  "features": [
+    "4K UHD outdoor pan/tilt",
+    "F1.6 aperture, choice of 4mm or 6mm lens",
+    "auto-zoom AI tracking",
+    "dual spotlights full-color night vision",
+    "sound + light deterrence",
+    "12 preset positions",
+    "H.265",
+    "no officially confirmed RTSP/ONVIF -- not listed on EZVIZ's official ONVIF compatibility FAQ, unlike the base H8c/H8 Pro 3K"
+  ],
+  "sources": [
+    "https://www.ezviz.com/product/h8c+pro+4k/61817",
+    "https://mfs.ezvizlife.com/H8c%20Pro%204K_datasheet.pdf"
+  ],
+  "power_source": [
+    "dc"
+  ],
+  "last_verified": "2026-07-01"
+}

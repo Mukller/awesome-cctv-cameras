@@ -1,0 +1,78 @@
+{
+  "id": "axis-p1368-e",
+  "brand": "Axis",
+  "model": "P1368-E",
+  "type": "box",
+  "connectivity": [
+    "ethernet"
+  ],
+  "release_year": 2017,
+  "resolution": {
+    "megapixels": 8,
+    "label": "4K UHD"
+  },
+  "lens": {
+    "focal_length_mm": "2.8-8.5 (i-CS varifocal)",
+    "varifocal": true
+  },
+  "field_of_view_deg": "108h",
+  "night_vision": {
+    "type": "none"
+  },
+  "power": {
+    "method": "PoE (802.3at)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "Axis P1368-E 4K fixed outdoor box",
+    "WDR",
+    "Lightfinder",
+    "IP66",
+    "AXIS Object Analytics",
+    "enterprise outdoor"
+  ],
+  "sources": [
+    "https://www.axis.com/products/axis-p1368-e"
+  ],
+  "markets": [
+    "global"
+  ],
+  "last_verified": "2026-07-04",
+  "power_source": [
+    "poe"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 1280,
+        "height": 720,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=1920x1080",
+      "best_substream": "rtsp://{user}:{pass}@{ip}/axis-media/media.amp?resolution=640x480"
+    },
+    "home_assistant": {
+      "integration": "axis",
+      "notes": "Native Axis integration with auto-discovery via Zeroconf."
+    },
+    "blue_iris": {
+      "profile": "Axis",
+      "notes": "Select 'Axis' profile. Auto-discovery via ONVIF usually works."
+    }
+  }
+}

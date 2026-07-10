@@ -1,0 +1,88 @@
+{
+  "id": "reolink-altas-pt-ultra",
+  "brand": "Reolink",
+  "model": "Altas PT Ultra",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "release_year": 2024,
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "field_of_view_deg": "355 pan/90 tilt",
+  "night_vision": {
+    "type": "color"
+  },
+  "power": {
+    "method": "Built-in 20000 mAh (72Wh) rechargeable battery / USB-C / optional Reolink Solar Panel 2 (6W) for continuous recording"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 512,
+    "nvr_compatible": false,
+    "cloud": true
+  },
+  "protocols": [
+    "p2p"
+  ],
+  "ip_rating": "IP65",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "world-first 4K continuous-recording battery PTZ camera",
+    "solar panel compatible (6W, sold separately)",
+    "360° pan/tilt auto-tracking",
+    "WiFi 6",
+    "color night vision",
+    "no subscription",
+    "IP65"
+  ],
+  "sources": [
+    "https://reolink.com/product/altas-pt-ultra/",
+    "https://reolink.com/product/altas-series-b660/"
+  ],
+  "last_verified": "2026-07-04",
+  "aliases": [
+    "B660"
+  ],
+  "power_source": [
+    "battery",
+    "solar",
+    "usb"
+  ],
+  "sensor": "1/1.8\" CMOS",
+  "lens": {
+    "focal_length_mm": "4",
+    "aperture": "F1.0",
+    "varifocal": false,
+    "count": 1
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 15,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "3840x2160",
+        "fps": 15,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "environment": [
+    "outdoor"
+  ],
+  "dimensions_mm": "178 x 151 x 102",
+  "weight_g": 853,
+  "operating_temp_c": "-20 to 55"
+}

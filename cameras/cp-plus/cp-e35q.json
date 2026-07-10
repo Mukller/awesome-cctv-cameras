@@ -1,0 +1,81 @@
+{
+  "id": "cp-plus-cp-e35q",
+  "brand": "CP Plus",
+  "model": "CP-E35Q",
+  "type": "ptz",
+  "connectivity": [
+    "wifi"
+  ],
+  "power_source": [
+    "usb",
+    "dc"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2304,
+    "max_height": 1296,
+    "label": "3MP/2K"
+  },
+  "video": {
+    "codecs": [
+      "H.265",
+      "H.264"
+    ],
+    "max_fps": 20
+  },
+  "sensor": "1/2.7\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F2.0",
+    "varifocal": false
+  },
+  "field_of_view_deg": "pan 355 / tilt 59",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 15
+  },
+  "power": {
+    "method": "USB Type-C DC 5V/1A (max ~5W)"
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "cloud": true,
+    "nvr_compatible": false
+  },
+  "protocols": [
+    "http"
+  ],
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "ezyKam+ consumer indoor Wi-Fi pan/tilt",
+    "355 pan / 59 tilt",
+    "two-way talk",
+    "motion + human detection",
+    "Google Home + Alexa",
+    "microSD up to 256GB"
+  ],
+  "environment": [
+    "indoor"
+  ],
+  "markets": [
+    "IN"
+  ],
+  "release_notes": "CP Plus ezyKam+ consumer indoor Wi-Fi pan/tilt camera. App-only (ezyKam+ / P2P cloud) — no ONVIF or RTSP, so it does not integrate with Frigate/NVRs. Pan/tilt only (no optical zoom).",
+  "sources": [
+    "https://cpplusworld.com/cp-e35q"
+  ],
+  "last_verified": "2026-07-05",
+  "status": "available",
+  "configs": {
+    "frigate": {
+      "notes": "ezyKam+ consumer Wi-Fi camera — app-only (ezyKam+ / P2P cloud). No ONVIF or RTSP is exposed, so Frigate / local-NVR integration is not supported.",
+      "verified": false
+    }
+  }
+}

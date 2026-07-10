@@ -1,0 +1,113 @@
+{
+  "id": "bosch-ndi-3702-al",
+  "brand": "Bosch",
+  "model": "FLEXIDOME indoor 3100i IR (NDI-3702-AL)",
+  "type": "dome",
+  "connectivity": [
+    "ethernet"
+  ],
+  "power_source": [
+    "poe"
+  ],
+  "resolution": {
+    "label": "1080p",
+    "max_width": 1920,
+    "max_height": 1080,
+    "megapixels": 2
+  },
+  "video": {
+    "codecs": [
+      "H.264",
+      "H.265",
+      "M-JPEG"
+    ],
+    "max_fps": 30,
+    "streams": [
+      {
+        "name": "main",
+        "resolution": "1920x1080",
+        "fps": 30,
+        "codec": "H.265"
+      }
+    ]
+  },
+  "sensor": "1/2.8 inch CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "3.3-10.2",
+    "aperture": "F1.6-F3.29",
+    "varifocal": true
+  },
+  "field_of_view_deg": "106-31.2 (horizontal); 55.2-17.5 (vertical)",
+  "night_vision": {
+    "type": "ir",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE IEEE 802.3af/802.3at Type 1",
+    "poe_class": 3
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 2048,
+    "nvr_compatible": true
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "features": [
+    "High Dynamic Range (HDR) 120 dB",
+    "IVA Pro Buildings deep-learning person/vehicle detection",
+    "Trusted Platform Module (TPM) secure element",
+    "Motorized varifocal lens with DC-iris",
+    "Switchable IR-cut filter (day/night)",
+    "Triple streaming / Bosch Intelligent Streaming",
+    "Edge recording up to 2 TB microSD",
+    "850 nm IR illuminator",
+    "8 privacy masks",
+    "Tamper detection",
+    "NDAA compliant",
+    "CVBS analog video output for installation"
+  ],
+  "operating_temp_c": "0 to 40",
+  "dimensions_mm": "Ø137 x 104",
+  "weight_g": 415,
+  "release_year": 2024,
+  "environment": [
+    "indoor"
+  ],
+  "sources": [
+    "https://cdn.commerce.boschsecurity.com/public/documents/NDI_3702_AL_GOV_Data_sheet_enUS_121022983563.pdf"
+  ],
+  "markets": [
+    "EU",
+    "global"
+  ],
+  "configs": {
+    "frigate": {
+      "detect": {
+        "width": 640,
+        "height": 480,
+        "fps": 5
+      },
+      "rtsp_url_template": "rtsp://{user}:{pass}@{ip}:554/?inst=1",
+      "best_substream": "rtsp://{user}:{pass}@{ip}:554/?inst=2",
+      "recommended_stream_type": "go2rtc",
+      "verified": false,
+      "notes": "Bosch official RTSP scheme: /?inst=1 main, /?inst=2 sub (per Bosch 'RTSP usage with Bosch Video IP Devices'). Default admin user is 'service' (no factory default password — set one first). ONVIF Profile S/G (T/M on INTEOX). Not individually bench-tested."
+    },
+    "home_assistant": {
+      "integration": "onvif",
+      "connection_type": "local_push",
+      "onvif_events": true,
+      "notes": "Generic ONVIF integration; Bosch CPP cameras are ONVIF Profile S/G compliant. Use the 'service' account."
+    },
+    "blue_iris": {
+      "profile": "ONVIF",
+      "notes": "Bosch — use the ONVIF/RTSP (or 'Bosch') profile; default admin user is 'service'."
+    }
+  },
+  "last_verified": "2026-07-06"
+}
