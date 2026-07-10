@@ -1,0 +1,70 @@
+{
+  "id": "zosi-c225",
+  "brand": "Zosi",
+  "model": "C225",
+  "type": "dome",
+  "connectivity": [
+    "poe",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4",
+    "aperture": "F1.6",
+    "varifocal": false
+  },
+  "field_of_view_deg": "90° horizontal",
+  "night_vision": {
+    "type": "hybrid",
+    "range_m": 30,
+    "modes": ["b&w", "color", "smart"]
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af) / DC 12V",
+    "voltage": "48V (PoE) / 12V (DC)",
+    "consumption_w": 6
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "features": [
+    "starlight night vision",
+    "person/vehicle detection",
+    "H.265+",
+    "no subscription required"
+  ],
+  "markets": [
+    "US",
+    "CA",
+    "UK",
+    "AU"
+  ],
+  "release_year": 2022,
+  "operating_temp_c": "-10 to 60",
+  "weight_g": 440,
+  "environment": ["outdoor", "indoor"],
+  "sources": [
+    "https://www.zositech.com/products/c225-4k-poe-camera-with-starlight-night-visison",
+    "https://www.zositech.com/blogs/product-specifications/poe-camera-c225-specifications"
+  ],
+  "last_verified": "2026-07-10"
+}

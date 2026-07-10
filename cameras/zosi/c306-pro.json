@@ -1,0 +1,67 @@
+{
+  "id": "zosi-c306-pro",
+  "brand": "Zosi",
+  "model": "C306 Pro",
+  "type": "bullet",
+  "connectivity": [
+    "wifi"
+  ],
+  "resolution": {
+    "megapixels": 3,
+    "max_width": 2048,
+    "max_height": 1536,
+    "label": "2K"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 10
+  },
+  "power": {
+    "method": "Rechargeable battery / solar panel",
+    "battery": true,
+    "solar_panel_compatible": true
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 128,
+    "cloud": true
+  },
+  "protocols": [
+    "p2p"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "wire-free",
+    "solar powered",
+    "PIR detection",
+    "person detection",
+    "spotlight",
+    "siren alarm",
+    "color night vision",
+    "2.4GHz WiFi only"
+  ],
+  "markets": [
+    "US",
+    "CA",
+    "UK",
+    "AU"
+  ],
+  "release_year": 2023,
+  "environment": ["outdoor"],
+  "sources": [
+    "https://www.zositech.com/products/c306-pro-3mp-wireless-spotlight-cameras",
+    "https://www.amazon.com/ZOSI-Wireless-Battery-Security-Rechargeable/dp/B07W52BP67"
+  ],
+  "last_verified": "2026-07-10"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "sunba-406-d20x",
+  "brand": "Sunba",
+  "model": "406-D20X",
+  "type": "ptz",
+  "connectivity": [
+    "poe",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 2,
+    "max_width": 1920,
+    "max_height": 1080,
+    "label": "1080p Full HD"
+  },
+  "sensor": "1/2.7\" Progressive Scan CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.7-94 (20x optical zoom)",
+    "varifocal": true,
+    "optical_zoom": 20
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 100
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at)",
+    "voltage": "48V (PoE+)",
+    "consumption_w": 30
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": false,
+    "speaker": false,
+    "two_way": false
+  },
+  "video": {
+    "codecs": ["H.265", "H.264"],
+    "max_fps": 20
+  },
+  "features": [
+    "360° endless pan",
+    "90° tilt",
+    "20x optical zoom",
+    "auto-focus",
+    "preset positions",
+    "4 patrol groups",
+    "Blue Iris compatible",
+    "SecuritySpy compatible",
+    "ONVIF 2.0 Profile S"
+  ],
+  "markets": [
+    "US",
+    "CA",
+    "UK",
+    "global"
+  ],
+  "release_year": 2019,
+  "environment": ["outdoor"],
+  "sources": [
+    "https://www.amazon.com/SUNBA-406-D20X-Outdoor-Auto-Focus-Compliant/dp/B07GR2L5XJ",
+    "https://www.sunbatech.com/"
+  ],
+  "last_verified": "2026-07-10"
+}

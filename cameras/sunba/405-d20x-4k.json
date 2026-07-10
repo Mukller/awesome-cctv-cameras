@@ -1,0 +1,73 @@
+{
+  "id": "sunba-405-d20x-4k",
+  "brand": "Sunba",
+  "model": "405-D20X 4K",
+  "type": "ptz",
+  "connectivity": [
+    "poe",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 8,
+    "max_width": 3840,
+    "max_height": 2160,
+    "label": "4K UHD"
+  },
+  "sensor": "1/2.8\" CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "4.3-86 (20x optical zoom)",
+    "varifocal": true,
+    "optical_zoom": 20
+  },
+  "night_vision": {
+    "type": "ir",
+    "range_m": 200
+  },
+  "power": {
+    "method": "PoE+ (IEEE 802.3at) / DC 12V",
+    "voltage": "48V (PoE+) / 12V (DC)",
+    "consumption_w": 30
+  },
+  "storage": {
+    "onboard": true,
+    "max_microsd_gb": 256,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp",
+    "http"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "360° endless pan",
+    "90° tilt",
+    "20x optical zoom",
+    "auto-focus",
+    "24/7 auto tour",
+    "preset positions",
+    "H.265",
+    "Blue Iris compatible",
+    "QNAP compatible"
+  ],
+  "markets": [
+    "US",
+    "CA",
+    "UK",
+    "global"
+  ],
+  "release_year": 2023,
+  "environment": ["outdoor"],
+  "sources": [
+    "https://www.sunbatech.com/product/405-d20x-4k/",
+    "https://www.amazon.com/SUNBA-High-Speed-4K-8MP/dp/B071ZFHTZN"
+  ],
+  "last_verified": "2026-07-10"
+}

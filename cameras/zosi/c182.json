@@ -1,0 +1,67 @@
+{
+  "id": "zosi-c182",
+  "brand": "Zosi",
+  "model": "C182",
+  "type": "bullet",
+  "connectivity": [
+    "poe",
+    "ethernet"
+  ],
+  "resolution": {
+    "megapixels": 5,
+    "max_width": 2880,
+    "max_height": 1620,
+    "label": "5MP"
+  },
+  "sensor": "CMOS",
+  "lens": {
+    "count": 1,
+    "focal_length_mm": "2.8",
+    "varifocal": false
+  },
+  "night_vision": {
+    "type": "color",
+    "range_m": 30
+  },
+  "power": {
+    "method": "PoE (IEEE 802.3af)",
+    "voltage": "48V (PoE)"
+  },
+  "storage": {
+    "onboard": false,
+    "nvr_compatible": true,
+    "cloud": false
+  },
+  "protocols": [
+    "onvif",
+    "rtsp"
+  ],
+  "ip_rating": "IP66",
+  "audio": {
+    "microphone": true,
+    "speaker": true,
+    "two_way": true
+  },
+  "features": [
+    "active deterrence",
+    "spotlight",
+    "siren alarm",
+    "person/vehicle detection",
+    "color night vision",
+    "no subscription required"
+  ],
+  "markets": [
+    "US",
+    "CA",
+    "UK",
+    "AU",
+    "EU"
+  ],
+  "release_year": 2022,
+  "environment": ["outdoor"],
+  "sources": [
+    "https://www.zositech.com/products/5mp-add-on-poe-security-camera-c182",
+    "https://www.zositech.com/blogs/product-specifications/c182-poe-security-camera-specifcations"
+  ],
+  "last_verified": "2026-07-10"
+}
